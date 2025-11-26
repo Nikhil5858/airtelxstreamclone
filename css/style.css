@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  background-color: #1c1f22;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+
+  background: #25272a; 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: width 0.3s ease;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.main-content {
+  margin-left: 70px;          
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #25272a;  
+  color: #fff;
+  transition: margin-left 0.3s ease;
+}
+
+.hero-slide-img {
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.78);
+}
+
+.hero-caption {
+    text-align: left !important;
+    left: 60px;
+    bottom: 70px;
+}
+
+.hero-caption h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 18px;
+}
+
+.ott-badge {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 6px 14px;
+    display: inline-block;
+    border-radius: 6px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.ott-card {
+  width: 200px;
+  height: 140px;
+  background: #111;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.ott-card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.ott-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(255,255,255,0.15);
+}
+
+.caption-buttons .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    margin-right: 10px;
+    backdrop-filter: blur(4px);
+}   
+
+.watch-btn {
+    background: linear-gradient(to right, #fff, #dcdcdc);
+    color: #000;
+
+}
+
+.add-btn {
+    border: 1px solid rgba(255,255,255,0.7);
+    color: #fff;
+}
+
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+
+.sidebar:hover ~ .main-content {
+  margin-left: 220px;
+}
+
+.sidebar:hover {
+  width: 220px;                          
+  background: rgba(0, 0, 0, 0.35);      
+  backdrop-filter: blur(10px);          
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .logo .brand {
+  width: 40px;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .menu li {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  padding: 14px 18px;
+  font-size: 18px;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar .menu li i {
+  font-size: 1.4rem;
+}
+
+.sidebar .menu li span {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar:hover .menu li span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar .menu li:hover {
+  color: #fff;
+}
+
+.upper-footer{
+    opacity:0.55;
+}
+
+.footer {
+  background: #191b21;
+  padding: 40px 20px;
+  text-align: center;
+  color: #d2d2d2;
+  margin-left: 70px;           /* match sidebar collapsed space */
+  transition: margin-left 0.3s ease;
+}
+
+/* move footer when sidebar expands */
+.sidebar:hover ~ .main-content + .footer {
+  margin-left: 220px;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #d2d2d2;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-text {
+  margin: 15px 0 25px;
+  font-size: 16px;
+}
+
+.footer-apps img {
+  height: 38px;
+  margin: 8px 12px;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.footer-apps img:hover {
+  opacity: 1;
+}
+
+.footer .copyright {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #999;
+}
