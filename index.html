@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,15 +19,21 @@
     <div class="logo mt-2">
         <img src="/images/xsteamplay.png" class="brand">
     </div>
-
     <ul class="menu">
-        <li><i class="bi bi-house"></i><span>Home</span></li>
-        <li><i class="bi bi-search"></i><span>Search</span></li>
-        <li><i class="bi bi-layers"></i><span>OTTs</span></li>
-        <li><i class="bi bi-play-circle"></i><span>Free</span></li>
-        <li><i class="bi bi-play-btn"></i><span>My Plans</span></li>
-        <li><i class="bi bi-person-circle"></i><span>Profile</span></li>
-        <li><i class="bi bi-phone"></i><span>Get App</span></li>
+        <li><a href="/index.html"><i class="bi bi-house"></i><span>Home</span></a>
+        </li>
+        <li><a href="/search.html"><i class="bi bi-search"></i><span>Search</span></a>
+        </li>
+        <li><a href="/otts.html"><i class="bi bi-layers"></i><span>OTTs</span></a>
+        </li>
+        <li><a href="/free.html"><i class="bi bi-play-circle"></i><span>Free</span></a>
+        </li>
+        <li><a href="/myplan.html"><i class="bi bi-play-btn"></i><span>My Plans</span></a>
+        </li>
+        <li><a href="/profile.html"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+        </li>
+        <li><a href="https://play.google.com/store/apps/details?id=tv.accedo.airtel.wynk&_branch_match_id=1522531487299482637&utm_source=Website&utm_campaign=Top_Bottom_CTA&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzy9IzdNLzCwqSc2pKC4pSk3M1cvM00%2F0DMzzCg%2BwcHdKsq8rSk1LLSrKzEuPTyrKLy9OLbJ1ywSK5VcAAJQeFpZEAAAA" target="_blank"><i class="bi bi-phone"></i><span>Get App</span></a>
+        </li>
     </ul>
 </div>
 
@@ -97,73 +106,620 @@
     <!-- Hero Slider End -->
      
     <!-- Category Bar -->
-    <div class="container mt-4 d-flex">
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <div class="section mt-4 d-flex">
+        <div class="category-wrapper py-3">
+            <div class="container d-flex justify-content-center">
+                <div class="category-buttons d-flex justify-content-center gap-3 flex-wrap">
 
-            <button class="btn btn-dark rounded-pill px-3 py-1 active">Sports</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">Free</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">Live TV</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">Movies</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">TV Shows</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">Action</button>
-            <button class="btn btn-outline-light rounded-pill px-3 py-1">Comedy</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Sports</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Free</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Live TV</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Movies</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">TV Shows</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Action</button>
+                    <button class="btn btn-outline-light rounded-pill px-3 py-1">Comedy</button>
 
-            <div class="dropdown">
-            <button class="btn btn-outline-light rounded-pill px-3 py-1 dropdown-toggle" data-bs-toggle="dropdown">
-                See More
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="#">Romance</a></li>
-                <li><a class="dropdown-item" href="#">Thriller</a></li>
-                <li><a class="dropdown-item" href="#">Drama</a></li>
-            </ul>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light rounded-pill px-3 py-1 dropdown-toggle" data-bs-toggle="dropdown">
+                            See More
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Romance</a></li>
+                            <li><a class="dropdown-item" href="#">Thriller</a></li>
+                            <li><a class="dropdown-item" href="#">Drama</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
-
         </div>
     </div>
     <!-- Category Bar -->
 
     <!-- OTT Logos Row -->
-    <div class="container my-4">
-        <div class="d-flex flex-wrap gap-3">
+    <div class="section my-4">
+        <div class="d-flex flex-wrap justify-content-center gap-3">
 
             <div class="ott-card">
-            <img src="/images/jiohotstar-logo-hd.webp" alt="JioHotstar">
+                <img src="/images/jiohotstar-logo-hd.webp" alt="JioHotstar">
             </div>
-
             <div class="ott-card">
-            <img src="/images/zee5-seeklogo.png" alt="ZEE5">
+                <img src="/images/zee5-seeklogo.png" alt="ZEE5">
             </div>
-
             <div class="ott-card">
-            <img src="/images/sony-liv-logo-hd.png" alt="Sony LIV">
+                <img src="/images/sony-liv-logo-hd.png" alt="Sony LIV">
             </div>
-
             <div class="ott-card">
-            <img src="/images/mx-player-seeklogo.png" alt="MX Player">
+                <img src="/images/mx-player-seeklogo.png" alt="MX Player">
             </div>
-
             <div class="ott-card">
-            <img src="/images/sunnxt.png" alt="SUN NXT">
+                <img src="/images/sunnxt.png" alt="SUN NXT">
             </div>
-
             <div class="ott-card">
-            <img src="/images/timesplay.png" alt="Times Play">
-            </div>
-
-            <div class="mt-4">
-                <a href="https://www.airtel.in/new-connection/broadband/?price=499&utm_source=xstream&utm_campaign=bb_acq_xstream_continue_watch_web"><img src="images/wifi-banner.webp" class="img-fluid w-100 rounded-1"></a>
+                <img src="/images/timesplay.png" alt="Times Play">
             </div>
 
         </div>
     </div>
     <!-- OTT Logos Row -->
 
+    <!-- WiFi Banner -->
+    <div class="text-center my-4">
+        <a href="https://www.airtel.in/new-connection/broadband/?price=499&utm_source=xstream&utm_campaign=bb_acq_xstream_continue_watch_web"><img src="/images/wifi-banner.webp" class="img-fluid rounded-2 wifi-banner"></a>
+    </div>
+
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Satta Ka Khel</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">New Releases</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Trending Searches</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="text-center my-4">
+        <a href="#"><img src="/images/maharani.webp" class="img-fluid rounded-2 wifi-banner"></a>
+    </div>
+
+    <div class="live-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Live Matches</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="live-scroller">
+            <div class="live-card">
+                <img src="/images/news1.webp" alt="News">
+            </div>
+
+            <div class="live-card">
+                <img src="/images/news2.webp" alt="News">
+            </div>
+            <div class="live-card">
+                <img src="/images/news3.webp" alt="News">
+            </div>
+
+            <div class="live-card">
+                <img src="/images/news4.webp" alt="News">
+            </div>
+            <div class="live-card">
+                <img src="/images/news5.webp" alt="News">
+            </div>
+
+            <div class="live-card">
+                <img src="/images/news1.webp" alt="News">
+            </div>
+        </div>
+    </div>
+
+     <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Filmfare OTT Awards 2025</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Reality TV Shows</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="lang-section mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Explore In Your Language</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="lang-scroller">
+            <div class="lang-card">
+                <img src="/images/Gujarati.webp" alt="Gujarati">
+            </div>
+
+            <div class="lang-card">
+                <img src="/images/English.png" alt="English">
+            </div>
+
+            <div class="lang-card">
+                <img src="/images/Punjabi.png" alt="Punjabi">
+            </div>
+            <div class="lang-card">
+                <img src="/images/Hindi.png" alt="Hindi">
+            </div>
+
+            <div class="lang-card">
+                <img src="/images/Bengali.webp" alt="Bengali">
+            </div>
+
+            <div class="lang-card">
+                <img src="/images/Tamil.png" alt="Tamil">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Reality TV Shows</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Remembering Dharmendra</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="text-center my-4">
+        <a href="#"><img src="/images/family-show-web_.webp" class="img-fluid rounded-2 wifi-banner"></a>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Trending Now</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/insidiousthelastkey_portrait_thumb.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+            <div class="movie-card">
+                <img src="/images/super30.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/lokah.webp" alt="lokah">
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-section mt-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Live TV</h3>
+            <a href="#" class="text-white">See All</a>
+        </div>
+
+        <div class="movie-scroller">
+            <div class="movie-card">
+                <img src="/images/abp_news1.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/tv9_bharatvarsh2.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/zee-news3.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/india_today4.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/9xm5.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/zee-news3.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/news_nation7.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/wion8.webp" alt="super30">
+            </div>
+
+            <div class="movie-card">
+                <img src="/images/tv9_marathi9.webp" alt="lokah">
+            </div>
+            <div class="movie-card">
+                <img src="/images/dd_news10.webp" alt="insidiousthelastkey_portrait_thumb">
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="text-center my-4">
+        <a href="#"><img src="/images/crorepati.webp" class="img-fluid rounded-2 wifi-banner"></a>
+    </div>
 
     <!-- Upper Footer Section -->
     <div class="upper-footer text-light py-3">
 
-        <div class="container">
 
         <h3 class="mb-4">Airtel Xstream Play: Access 25+ OTT Platforms</h3>
 
@@ -358,7 +914,6 @@
         </div>
 
         </div>
-    </div>
     </div>
     <!-- Upper Footer Section -->
 

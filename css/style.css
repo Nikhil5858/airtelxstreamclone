@@ -1,6 +1,13 @@
 body {
   margin: 0;
   background-color: #1c1f22;
+  font-family: "roboto", sans-serif !important;
+}
+
+.roboto{
+  font-family: "roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .sidebar {
@@ -23,42 +30,42 @@ body {
   margin-left: 70px;          
   padding: 20px;
   min-height: 100vh;
-  background-color: #25272a;  
+  background-color: #25272a; 
   color: #fff;
   transition: margin-left 0.3s ease;
 }
 
 .hero-slide-img {
-    height: 550px;
-    object-fit: cover;
-    filter: brightness(0.78);
+  height: 550px;
+  object-fit: cover;
+  filter: brightness(0.78);
 }
 
 .hero-caption {
-    text-align: left !important;
-    left: 60px;
-    bottom: 70px;
+  text-align: left !important;
+  left: 60px;
+  bottom: 70px;
 }
 
 .hero-caption h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .tagline {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-bottom: 18px;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 18px;
 }
 
 .ott-badge {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 6px 14px;
-    display: inline-block;
-    border-radius: 6px;
-    margin-bottom: 14px;
-    font-weight: 600;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px 14px;
+  display: inline-block;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
 .ott-card {
@@ -84,37 +91,37 @@ body {
 }
 
 .caption-buttons .btn {
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: 600;
-    margin-right: 10px;
-    backdrop-filter: blur(4px);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  backdrop-filter: blur(4px);
 }   
 
 .watch-btn {
-    background: linear-gradient(to right, #fff, #dcdcdc);
-    color: #000;
+  background: linear-gradient(to right, #fff, #dcdcdc);
+  color: #000;
 
 }
 
 .add-btn {
-    border: 1px solid rgba(255,255,255,0.7);
-    color: #fff;
+  border: 1px solid rgba(255,255,255,0.7);
+  color: #fff;
 }
 
 .carousel-item {
-    transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 
 .sidebar:hover ~ .main-content {
-  margin-left: 220px;
+  margin-left: 140px;
 }
 
 .sidebar:hover {
-  width: 220px;                          
-  background: rgba(0, 0, 0, 0.35);      
-  backdrop-filter: blur(10px);          
+    width: 140px;
+    background: #25272a;  
+    backdrop-filter: none;
 }
 
 .sidebar .logo {
@@ -132,7 +139,7 @@ body {
   margin: 0;
 }
 
-.sidebar .menu li {
+.sidebar .menu li a{
   display: flex;
   align-items: center;
   color: #ccc;
@@ -141,26 +148,217 @@ body {
   gap: 15px;
   cursor: pointer;
   transition: 0.2s;
+  text-decoration: none; 
 }
 
-.sidebar .menu li i {
+.sidebar .menu li i { 
   font-size: 1.4rem;
 }
 
-.sidebar .menu li span {
+.sidebar .menu li a span{
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
   white-space: nowrap;
 }
 
-.sidebar:hover .menu li span {
+.sidebar:hover .menu li a span {
   opacity: 1;
   visibility: visible;
 }
 
-.sidebar .menu li:hover {
+.sidebar .menu li:hover a{
   color: #fff;
+}
+
+.category-wrapper {
+  background-color: transparent;
+}
+
+.category-buttons button {
+    font-size: 0.9rem;
+}
+
+.wifi-banner {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.category-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+}
+
+
+.movie-section {
+    padding: 0 20px;
+}
+
+.movie-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.movie-scroller::-webkit-scrollbar {
+    height: 6px;
+    display: none;
+}
+.movie-scroller::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.movie-card {
+    min-width: 180px;
+    max-width: 180px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #1f1f1f;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.live-section {
+    padding: 0 20px;
+}
+
+.live-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.live-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.live-card {
+    min-width: 275px;
+    max-width: 275px;
+    height: 170px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #1f1f1f;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.live-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.live-card:hover {
+    transform: scale(1.03);
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    backdrop-filter: blur(6px);
+}
+
+.search-container .search-icon {
+    font-size: 23px;
+    color: #aaa;
+    margin-right: 12px;
+}
+
+.search-container input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.search-container input:focus {
+    color: #fff;
+}
+
+.search-container:focus-within {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Language Section */
+.lang-section {
+    padding: 0 20px;
+}
+
+.lang-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.lang-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+/* The small square cards */
+.lang-card {
+    width: 170px;
+    height: 170px;
+    background: #1f1f1f;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
+}
+
+.lang-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.lang-card:hover {
+    transform: scale(1.05);
 }
 
 .upper-footer{
@@ -172,11 +370,10 @@ body {
   padding: 40px 20px;
   text-align: center;
   color: #d2d2d2;
-  margin-left: 70px;           /* match sidebar collapsed space */
+  margin-left: 70px;     
   transition: margin-left 0.3s ease;
 }
 
-/* move footer when sidebar expands */
 .sidebar:hover ~ .main-content + .footer {
   margin-left: 220px;
 }
@@ -217,3 +414,182 @@ body {
   font-size: 13px;
   color: #999;
 }
+
+.section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.section * {
+    margin-left:0 !important;
+    padding-left: 0 !important;
+}
+
+
+/* Phone header */
+.phone-bar {
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.phone-number {
+    font-weight: 500;
+}
+
+/* Profile cards */
+.profile-option-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 32px 15px;
+    text-align: center;
+    color: #fff;
+    transition: none; 
+}
+
+.profile-option-card:hover {
+    background: rgba(255, 255, 255, 0.08); /* same as default */
+    transform: none;
+}
+
+.profile-option-card .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.profile-option-card .title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.watchlist-empty {
+    padding: 70px 0;
+    margin-bottom: 150px;
+}
+.watchlist-icon {
+    font-size: 135px; 
+}
+
+.plus-icon {
+    position: absolute;
+    bottom: -5px;    
+    right: -15px;
+    font-size: 35px;   
+    
+}
+
+.watchlist-graphic {
+    position: relative;
+    display: inline-block;
+    color: #dcdcdc;
+}
+
+/* PLAN CARD STYLING */
+
+.main-plan-wrapper {
+    background: #111219;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    max-width: 575px;
+    margin: 0 auto;
+}
+
+.inner-plan-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+@media (max-width: 768px) {
+    .inner-plan-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.plan-card {
+    width: 100%;
+    background: #191b21;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+}
+
+/* Badge */
+.trending-badge {
+    background: #5a27ff;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* Pricing */
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.new-price {
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Big OTT Icons */
+.ott-icon {
+    width: clamp(48px, 7vw, 65px);
+    height: clamp(48px, 7vw, 65px);
+    object-fit: contain;
+    padding: 6px;
+}
+
+/* OTT Grid */
+.ott-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+    gap: 12px;
+}
+
+/* Each OTT Logo */
+.ott-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    padding: 6px;
+    object-fit: contain;
+}
+
+/* Button */
+.subscribe-btn {
+    background: linear-gradient(to right, #ffffff, #b8b8b8);
+    color: #000;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+    opacity: 0.9;
+}
+
+.myplan-page {
+    background: linear-gradient(
+        to bottom,
+        #300107 0%,
+        #2b0008 35%,
+        #0a0003 70%,
+        #000000 100%
+    );
+    background-attachment: local;
+}
+
