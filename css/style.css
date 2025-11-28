@@ -30,7 +30,14 @@ body {
   margin-left: 70px;          
   padding: 20px;
   min-height: 100vh;
-  background-color: #25272a; 
+  background: linear-gradient(
+      to bottom,
+      #2a2a2a 0%,
+      #323232 30%,
+      #363636 60%,
+      #181a1c 100%
+  );
+  background-attachment: local;
   color: #fff;
   transition: margin-left 0.3s ease;
 }
@@ -217,25 +224,98 @@ body {
     border-radius: 4px;
 }
 
+
 .movie-card {
+    position: relative;
     min-width: 180px;
     max-width: 180px;
-    border-radius: 4px;
+    height: 260px;
+    border-radius: 10px;
     overflow: hidden;
     background: #1f1f1f;
     flex-shrink: 0;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease;
+    cursor: pointer;
 }
 
 .movie-card img {
     width: 100%;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.movie-card:hover {
-    transform: scale(1.05);
+/* Dark overlay */
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
+
+/* Show overlay on hover */
+.movie-card:hover .card-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.movie-title {
+    color: white;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+/* Badges */
+.badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.age {
+    background: rgba(0,0,0,0.6);
+}
+
+.type {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Watchlist button */
+.watchlist-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.watchlist-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+
 
 .live-section {
     padding: 0 20px;
@@ -256,14 +336,16 @@ body {
 }
 
 .live-card {
+    position: relative;
     min-width: 275px;
     max-width: 275px;
     height: 170px;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     background: #1f1f1f;
     flex-shrink: 0;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease;
+    cursor: pointer;
 }
 
 .live-card img {
@@ -272,9 +354,56 @@ body {
     object-fit: cover;
 }
 
-.live-card:hover {
-    transform: scale(1.03);
+/* Overlay */
+.live-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
+
+/* Show overlay on hover */
+.live-card:hover .live-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Title */
+.live-title {
+    color: white;
+    font-size: 17px;
+    margin: 0 0 6px 0;
+}
+
+/* Badges */
+.live-badges {
+    display: flex;
+    gap: 6px;
+}
+
+.badge {
+    font-size: 11px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    color: white;
+    background: rgba(255,255,255,0.15);
+}
+
+.badge.live {
+    background: red;
+    font-weight: bold;
+}
+
+.badge.type {
+    background: rgba(255,255,255,0.2);
+}
+
 
 .search-container {
     position: relative;
@@ -337,29 +466,48 @@ body {
 
 /* The small square cards */
 .lang-card {
+    position: relative;
     width: 170px;
     height: 170px;
     background: #1f1f1f;
     border-radius: 4px;
     overflow: hidden;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    text-align: center;
+    transition: transform 0.25s ease;
+    cursor: pointer;
 }
 
 .lang-card img {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
 }
 
-.lang-card:hover {
-    transform: scale(1.05);
+.lang-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
+
+.lang-card:hover .lang-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lang-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
 
 .upper-footer{
     opacity:0.55;
@@ -375,7 +523,7 @@ body {
 }
 
 .sidebar:hover ~ .main-content + .footer {
-  margin-left: 220px;
+  margin-left: 140px;
 }
 
 .footer-links {
@@ -399,7 +547,7 @@ body {
 }
 
 .footer-apps img {
-  height: 38px;
+  height: 30px;
   margin: 8px 12px;
   opacity: 0.9;
   transition: 0.3s;
