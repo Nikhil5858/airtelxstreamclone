@@ -555,7 +555,7 @@ body {
 }
 
 .footer-apps img {
-  height: 30px;
+  height: 20px;
   margin: 8px 12px;
   opacity: 0.9;
   transition: 0.3s;
@@ -750,13 +750,92 @@ body {
 
 
 .carousel-item {
-    transition: transform 1.2s ease-in-out; /* slow & smooth */
+    transition: transform 1.2s ease-in-out; 
 }
 
 .modal-content {
-    background-color: #111; /* deeper black like Airtel */
+    background-color: #111; 
 }
 
 .modal .btn-close {
     filter: invert(1);
+}
+
+
+.smv-hero {
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.smv-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center right;
+    z-index: 1;
+    filter: brightness(0.65);
+}
+
+.smv-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.95) 20%, rgba(0,0,0,0.2) 70%, transparent);
+    z-index: 2;
+}
+
+.smv-content {
+    position: relative;
+    z-index: 5;
+    padding-top: 150px;
+}
+
+.smv-share {
+    position: absolute;
+    right: 40px;
+    bottom: 60px;
+    z-index: 6;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.smv-share:hover {
+    opacity: 1;
+}
+.smv-meta { opacity: 0.7; }
+.smv-audio { opacity: 0.7; }
+.smv-desc { opacity: 0.9; }
+
+.smv-actions button {
+    border-radius: 4px;
+}
+
+/* Tab Header */
+.smv-tabs {
+    border-bottom: 1px solid #333;
+}
+
+.smv-tab {
+    background: none;
+    color: #aaa;
+    font-size: 18px;
+    border: none;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.smv-tab.active {
+    color: #fff;
+    border-bottom: 3px solid #e50914;
+}
+
+.smv-tab-content {
+    display: none;
+}
+
+.smv-tab-content.active {
+    display: block;
 }
