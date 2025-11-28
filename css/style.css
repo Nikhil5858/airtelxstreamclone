@@ -122,11 +122,11 @@ body {
 
 
 .sidebar:hover ~ .main-content {
-  margin-left: 140px;
+  margin-left: 150px;
 }
 
 .sidebar:hover {
-    width: 140px;
+    width: 150px;
     background: #25272a;  
     backdrop-filter: none;
 }
@@ -404,6 +404,14 @@ body {
     background: rgba(255,255,255,0.2);
 }
 
+/* Live small badges */
+.section-icon {
+    width: 29px;
+    height: 29px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
 
 .search-container {
     position: relative;
@@ -523,7 +531,7 @@ body {
 }
 
 .sidebar:hover ~ .main-content + .footer {
-  margin-left: 140px;
+  margin-left: 150px;
 }
 
 .footer-links {
@@ -740,3 +748,15 @@ body {
     background-attachment: local;
 }
 
+
+.carousel-item {
+    transition: transform 1.2s ease-in-out; /* slow & smooth */
+}
+
+.modal-content {
+    background-color: #111; /* deeper black like Airtel */
+}
+
+.modal .btn-close {
+    filter: invert(1);
+}
