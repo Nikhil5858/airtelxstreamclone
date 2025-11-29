@@ -43,72 +43,63 @@ body {
 }
 
 .hero-slide-img {
-  height: 550px;
+  height: 600px;
   object-fit: cover;
   filter: brightness(0.78);
 }
 
-.hero-caption {
+.carousel-caption {
+  position: absolute;
+  bottom: 80px !important;      
+  left: 70px !important;        
+  right: auto !important;
+  top: auto !important;
   text-align: left !important;
-  left: 60px;
-  bottom: 70px;
+  width: auto;
+  max-width: 600px;
+  transform: none !important;
+  padding: 0 !important;
+}
+
+.hero-caption {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  padding: 0;
 }
 
 .hero-caption h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;           
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .tagline {
   font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .ott-badge {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
   padding: 6px 14px;
   display: inline-block;
   border-radius: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   font-weight: 600;
-}
-
-.ott-card {
-  width: 200px;
-  height: 140px;
-  background: #111;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.ott-card img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.ott-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(255,255,255,0.15);
 }
 
 .caption-buttons .btn {
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 12px 22px;
   font-weight: 600;
-  margin-right: 10px;
+  margin-right: 12px;
   backdrop-filter: blur(4px);
-}   
+}
 
 .watch-btn {
   background: linear-gradient(to right, #fff, #dcdcdc);
   color: #000;
-
 }
 
 .add-btn {
@@ -174,18 +165,23 @@ body {
   visibility: visible;
 }
 
+
 .sidebar .menu li:hover a{
   color: #fff;
 }
 
 .category-wrapper {
-  background-color: transparent;
+  background: transparent;
 }
 
-.category-buttons button {
-    font-size: 0.9rem;
+.category-buttons {
+    display: flex;
+    justify-content: center;      
+    align-items: center;
+    flex-wrap: wrap;              
+    gap: 12px;                    
+    position: relative;           
 }
-
 .wifi-banner {
     max-width: 900px;
     width: 100%;
