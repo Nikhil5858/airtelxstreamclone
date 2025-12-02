@@ -42,13 +42,11 @@ body {
   transition: margin-left 0.3s ease;
 }
 
-/* 1. Banner size */
 .hero-slide-img {
     height: 600px;
     object-fit: cover;
 }
 
-/* 2. Dark left-to-right gradient overlay */
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -56,7 +54,6 @@ body {
     z-index: 2;
 }
 
-/* 3. Content layout */
 .hero-content {
     position: absolute;
     left: 60px;
@@ -70,7 +67,6 @@ body {
     z-index: 5;
 }
 
-/* Left Content */
 .hero-left {
     max-width: 600px;
 }
@@ -111,7 +107,6 @@ body {
     font-size: 1rem;
 }
 
-/* Right Buttons */
 .hero-right {
     display: flex;
     flex-direction: column;
@@ -147,7 +142,6 @@ body {
     border: none;
 }
 
-/* 4. Arrows */
 .hero-arrow {
     position: absolute;
     bottom: 280px;
@@ -180,12 +174,9 @@ body {
 .hero-prev { left: 60px; }
 .hero-next { right: 60px; }
 
-/* Fade transition */
 .carousel-item {
     transition: opacity .8s ease-in-out;
 }
-
-
 
 .sidebar:hover ~ .main-content {
   margin-left: 150px;
@@ -257,7 +248,6 @@ body {
   gap: 14px;
 }
 
-/* Main Buttons Styling */
 .category-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -269,13 +259,11 @@ body {
   transition: 0.15s ease-in-out;
 }
 
-/* Hover Effects */
 .category-btn:hover {
   background: #4f5866;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* Dropdown menu styling to match dark UI */
 .dropdown-menu-dark {
   background: #1a1a1a;
   border: none;
@@ -305,48 +293,6 @@ body {
   scrollbar-width: none;
   padding-bottom: 10px;
 }
-
-
-/* .movie-section {
-    padding: 0 20px;
-    overflow: visible !important;
-} */
-
-
-/* overflow: visible !important; */
-/* .movie-scroller {
-    display: flex;
-    gap: 18px; */
-    /* overflow-x: auto;
-    overflow-y: visible;
-    position: relative;
-    z-index: 1;
-    padding-bottom: 40px;
-} */
-
-/* .movie-card-wrapper {
-    position: relative;
-    overflow: visible !important;
-    z-index: 2;
-}
-
-.movie-scroll-inner {
-    display: flex;
-    gap: 18px;
-    overflow: visible;
-    position: relative;
-}
-
-
-.movie-scroller::-webkit-scrollbar {
-    display: none;
-}
-
-.movie-link {
-    display: block;
-    overflow: visible;
-    text-decoration: none;
-} */
 
 
 .movie-section {
@@ -489,7 +435,7 @@ body {
 
     padding: 0;
 
-    font-size: 42px; /* perfect arrow size */
+    font-size: 42px;
     color: rgba(255,255,255,0.8);
     font-weight: 200;
 
@@ -510,15 +456,19 @@ body {
 }
 
 .left-btn {
-    left: -10px; /* adjust for your layout */
+    left: -10px; 
 }
 
 .right-btn {
     right: -10px;
 }
 
-
-
+.movie-card-wrapper:first-child .movie-card,
+.live-card-wrapper:first-child .live-card,
+.lang-card-wrapper:first-child .lang-card,
+.top10-card-wrapper:first-child .top10-card {
+    transform-origin: left center;
+}
 
 .top10-section {
     padding: 0 20px;
@@ -701,8 +651,6 @@ body {
 .top10-right-btn { right: -10px; }
 
 
-
-
 .live-section {
     padding: 0 20px;
     overflow: visible !important;
@@ -784,14 +732,12 @@ body {
     opacity: 1;
 }
 
-/* Title */
 .live-title {
     color: white;
     font-size: 17px;
     margin: 0 0 6px 0;
 }
 
-/* Badges */
 .live-badges {
     display: flex;
     gap: 6px;
@@ -814,7 +760,6 @@ body {
     background: rgba(255,255,255,0.2);
 }
 
-/* Live small badges */
 .section-icon {
     width: 29px;
     height: 29px;
@@ -873,7 +818,6 @@ body {
     overflow: visible !important;
 }
 
-/* Scroller */
 .lang-scroller {
     overflow-x: auto;
     overflow-y: visible !important;
@@ -893,13 +837,11 @@ body {
     overflow: visible !important;
 }
 
-/* Wrapper */
 .lang-card-wrapper {
     position: relative;
     overflow: visible !important;
 }
 
-/* Card */
 .lang-card {
     position: relative;
     width: 170px;
@@ -955,8 +897,6 @@ body {
     margin: 0;
 }
 
-
-/* Arrows */
 .scroll-btn {
     position: absolute;
     top: 50%;
@@ -982,7 +922,6 @@ body {
 
 .lang-left { left: -10px; }
 .lang-right { right: -10px; }
-
 
 
 .upper-footer{
@@ -1045,7 +984,6 @@ body {
     margin: 0;
 }
 
-/* Phone header */
 .phone-bar {
     color: #fff;
     font-size: 22px;
@@ -1057,7 +995,6 @@ body {
     font-weight: 500;
 }
 
-/* Profile cards */
 .profile-option-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1069,7 +1006,7 @@ body {
 }
 
 .profile-option-card:hover {
-    background: rgba(255, 255, 255, 0.08); /* same as default */
+    background: rgba(255, 255, 255, 0.08); 
     transform: none;
 }
 
@@ -1107,8 +1044,6 @@ body {
     color: #dcdcdc;
 }
 
-/* PLAN CARD STYLING */
-
 .main-plan-wrapper {
     background: #111219;
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1137,7 +1072,6 @@ body {
     border-radius: 18px;
 }
 
-/* Badge */
 .trending-badge {
     background: #5a27ff;
     color: white;
@@ -1147,7 +1081,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Pricing */
 .old-price {
     color: #888;
     text-decoration: line-through;
@@ -1161,7 +1094,6 @@ body {
     font-size: 20px;
 }
 
-/* Big OTT Icons */
 .ott-icon {
     width: clamp(48px, 7vw, 65px);
     height: clamp(48px, 7vw, 65px);
@@ -1169,14 +1101,12 @@ body {
     padding: 6px;
 }
 
-/* OTT Grid */
 .ott-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
     gap: 12px;
 }
 
-/* Each OTT Logo */
 .ott-grid img {
     width: 100%;
     height: auto;
@@ -1186,7 +1116,6 @@ body {
     object-fit: contain;
 }
 
-/* Button */
 .subscribe-btn {
     background: linear-gradient(to right, #ffffff, #b8b8b8);
     color: #000;
@@ -1209,7 +1138,6 @@ body {
     );
     background-attachment: local;
 }
-
 
 .carousel-item {
     transition: transform 1.2s ease-in-out; 
@@ -1275,7 +1203,6 @@ body {
     border-radius: 4px;
 }
 
-/* Tab Header */
 .smv-tabs {
     border-bottom: 1px solid #333;
 }
