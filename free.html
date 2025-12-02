@@ -30,7 +30,12 @@
         </li>
         <li><a href="/myplan.html"><i class="bi bi-play-btn"></i><span>My Plans</span></a>
         </li>
-        <li><a href="/profile.html"><i class="bi bi-person-circle"></i><span>Log In</span></a>
+        <li><a href="/profile.html"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+        </li>
+        <li>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="bi bi-box-arrow-in-right"></i><span>Log In</span>
+            </a>
         </li>
         <li><a href="https://play.google.com/store/apps/details?id=tv.accedo.airtel.wynk&_branch_match_id=1522531487299482637&utm_source=Website&utm_campaign=Top_Bottom_CTA&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzy9IzdNLzCwqSc2pKC4pSk3M1cvM00%2F0DMzzCg%2BwcHdKsq8rSk1LLSrKzEuPTyrKLy9OLbJ1ywSK5VcAAJQeFpZEAAAA" target="_blank"><i class="bi bi-phone"></i><span>Get App</span></a>
         </li>
@@ -38,26 +43,90 @@
 </div>
 
 <div class="main-content">
-    <!-- Hero Slider Start -->
-    <div id="heroCarousel" class="carousel slide carousel-fade mb-4" data-bs-ride="carousel" data-bs-interval="1000">
-        
-        <div class="carousel-inner">
 
-            <!-- Slide 1 -->
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background:#101214; color:#fff; border-radius:12px; padding:20px 25px;">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="m-0">Xstream Play</h4>
+                <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+
+            <h5>Enter your Airtel Number</h5>
+            <p style="font-size:14px; color:#b9b9b9;">
+                You can also use your Broadband/DTH registered numbers to login
+            </p>
+
+            <form>
+                <div class="d-flex align-items-center gap-2 mb-2" style="border-bottom:1px solid #444; padding-bottom:8px;">
+                    <span style="font-size:18px;">+91</span>
+                    <input id="mobileInput" type="text" class="form-control bg-transparent text-white" placeholder="Enter mobile number">
+                </div>
+
+                <span id="mobileError" style="color:red; font-size:14px;"></span>
+
+                <button id="continueBtn" type="button" class="btn w-100 mt-3" style="background:#ffffff; color:#000; border-radius:8px; padding:10px;">
+                    Continue
+                </button>
+            </form>
+
+            <p class="mt-3 text-center" style="font-size:12px; color:#b9b9b9;">
+                I agree to the <a href="#" style="color:#fff;">Terms of Uses</a> and 
+                <a href="#" style="color:#fff;">Privacy Policy</a>
+            </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- OTP MODAL -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background:#101214; color:#fff; border-radius:12px; padding:25px;">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="m-0">Verify your number</h5>
+                </div>
+
+                <p class="mb-1">Enter OTP sent to <span id="otpMobile" style="font-weight:600;"></span></p>
+
+                <div class="d-flex justify-content-between gap-2 my-4">
+                    <input maxlength="1" class="otp-input form-control text-center bg-transparent text-white">
+                    <input maxlength="1" class="otp-input form-control text-center bg-transparent text-white">
+                    <input maxlength="1" class="otp-input form-control text-center bg-transparent text-white">
+                    <input maxlength="1" class="otp-input form-control text-center bg-transparent text-white">
+                </div>
+
+                <span id="otpError" style="color:red; font-size:14px;"></span>
+                <p class="text-center mb-4" id="resendTimer" style="color:#b9b9b9;">Resend OTP in (0:30)</p>
+
+                <button class="btn w-100" style="background:#ffffff; color:#000; border-radius:8px; padding:10px;">
+                    VERIFY
+                </button>
+
+                <p class="mt-3 text-center" style="font-size:12px; color:#b9b9b9;">
+                    I agree to the <a href="#" style="color:#fff;">Terms of Uses</a> and
+                    <a href="#" style="color:#fff;">Privacy Policy</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Slider Start -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+
+        <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="/images/index/slider4.webp" class="d-block w-100 hero-slide-img">
                 <div class="carousel-caption hero-caption">
-                    <div class="ott-badge">SONY liv</div>
+                    <div class="ott-badge">SONY Liv</div>
                     <h2>Sita Ramam</h2>
                     <p class="tagline">U/A 16+ Free • Hindi • Movie • Drama</p>
-
                     <div class="caption-buttons">
-                        <button class="btn btn-light watch-btn">
-                            <i class="bi bi-play-circle"></i> Watch Now
-                        </button>
-                        <button class="btn btn-outline-light add-btn">
-                            <i class="bi bi-plus-lg"></i> Add to Watchlist
-                        </button>
+                        <button class="btn btn-light"><i class="bi bi-play-circle"></i> Watch Now</button>
+                        <button class="btn btn-outline-light"><i class="bi bi-plus-lg"></i> Add to Watchlist</button>
                     </div>
                 </div>
             </div>
@@ -65,17 +134,12 @@
             <div class="carousel-item">
                 <img src="/images/index/slider2.webp" class="d-block w-100 hero-slide-img">
                 <div class="carousel-caption hero-caption">
-                    <div class="ott-badge">SONY liv</div>
+                    <div class="ott-badge">SONY Liv</div>
                     <h2>Jailer</h2>
                     <p class="tagline">U/A 16+ • Action • Crime • Comedy • Hindi • Movie</p>
-
                     <div class="caption-buttons">
-                        <button class="btn btn-light watch-btn">
-                            <i class="bi bi-play-circle"></i> Watch Now
-                        </button>
-                        <button class="btn btn-outline-light add-btn">
-                            <i class="bi bi-plus-lg"></i> Add to Watchlist
-                        </button>
+                        <button class="btn btn-light"><i class="bi bi-play-circle"></i> Watch Now</button>
+                        <button class="btn btn-outline-light"><i class="bi bi-plus-lg"></i> Add to Watchlist</button>
                     </div>
                 </div>
             </div>
@@ -86,14 +150,9 @@
                     <div class="ott-badge">ZEE5</div>
                     <h2>Ram Setu</h2>
                     <p class="tagline">U/A 13+ • Action • Adventure • Suspense • History</p>
-
                     <div class="caption-buttons">
-                        <button class="btn btn-light watch-btn">
-                            <i class="bi bi-play-circle"></i> Watch Now
-                        </button>
-                        <button class="btn btn-outline-light add-btn">
-                            <i class="bi bi-plus-lg"></i> Add to Watchlist
-                        </button>
+                        <button class="btn btn-light"><i class="bi bi-play-circle"></i> Watch Now</button>
+                        <button class="btn btn-outline-light"><i class="bi bi-plus-lg"></i> Add to Watchlist</button>
                     </div>
                 </div>
             </div>
@@ -104,1812 +163,1631 @@
                     <div class="ott-badge">Netflix</div>
                     <h2>Pippa</h2>
                     <p class="tagline">U/A 16+ • Action • Drama • War • Hindi • Drama</p>
-
                     <div class="caption-buttons">
-                        <button class="btn btn-light watch-btn">
-                            <i class="bi bi-play-circle"></i> Watch Now
-                        </button>
-                        <button class="btn btn-outline-light add-btn">
-                            <i class="bi bi-plus-lg"></i> Add to Watchlist
-                        </button>
+                        <button class="btn btn-light"><i class="bi bi-play-circle"></i> Watch Now</button>
+                        <button class="btn btn-outline-light"><i class="bi bi-plus-lg"></i> Add to Watchlist</button>
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <button class="hero-arrow prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <i class="arrow-icon">&lt;</i>
+        </button>
+
+        <button class="hero-arrow next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <i class="arrow-icon">&gt;</i>
+        </button>
+
 
     </div>
     <!-- Hero Slider End -->
 
     <!-- OTT Logos Row -->
     <div class="live-section mt-3">
-        <div class="live-scroller">
-            <div class="live-card">
-                <img src="/images/index/ottlogo1.webp" alt="Jio Hotstar">
+        <div class="live-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Jio Hotstar</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo2.webp" alt="Sony liv">
+            <div class="live-scroller">
+                <div class="live-scroll-inner">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Sony liv</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo3.webp" alt="Z 5">
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo1.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo2.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo3.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo4.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo5.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo6.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo7.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo8.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo9.webp" alt="News">
+                        </div>
+                    </div>
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Z 5</h5>
                 </div>
             </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo4.webp" alt="MX Player">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">MX Player</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo5.webp" alt="Sun Nxt">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Sun Nxt</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo6.webp" alt="Times Play">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Times Play</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo7.webp" alt="Lionsgate Play">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Lionsgate Play</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo8.webp" alt="Hungama Ott">
-                <div class="live-overlay">
-                    <h5 class="live-title">Hungama Ott</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo9.webp" alt="Adda Times">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Adda Times</h5>
-                </div>
-            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
     </div>
     <!-- OTT Logos Row -->
 
-    <div class="live-section mt-3">
+    <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">Live News</h3>
-            <a href="#" class="text-white">See All</a>
+            <h3 class="text-white m-0">New Releases</h3>
+            <a href="seeall.html" class="text-white">See All</a>
+        </div>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
+        </div>
+    </div> 
+
+    <!-- WiFi Banner -->
+    <div class="text-center my-4">
+        <a href="https://www.airtel.in/new-connection/broadband/?price=499&utm_source=xstream&utm_campaign=bb_acq_xstream_continue_watch_web"><img src="/images/index/wifi-banner.webp" class="img-fluid rounded-2 wifi-banner"></a>
+    </div>
+
+    <div class="top10-section mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="text-white m-0">Top 10 Movies</h3>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
 
-        <div class="live-scroller">
-            <div class="live-card">
-                <img src="/images/index/news1.webp" alt="News">
+        <div class="top10-scroll-container">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">TV Live</h5>
+            <button class="top10-scroll-btn top10-left-btn">❮</button>
 
-                    <div class="live-badges">
-                        <span class="badge live">LIVE</span>
-                        <span class="badge type">News</span>
+            <div class="top10-scroller">
+                <div class="top10-scroll-inner">
+
+                    <!-- ITEM 1 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">1</div>
+
+                        <div class="top10-card ms-3">
+                            <img src="/images/index/super30.webp" alt="movie">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Super 30</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">2</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/insidiousthelastkey_portrait_thumb.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Insidious</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">3</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/lokah.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Lokah</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ITEM 2 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">4</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/insidiousthelastkey_portrait_thumb.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Insidious</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">5</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/lokah.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Lokah</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ITEM 2 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">6</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/insidiousthelastkey_portrait_thumb.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Insidious</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">7</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/lokah.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Lokah</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ITEM 2 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">8</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/insidiousthelastkey_portrait_thumb.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Insidious</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="top10-card-wrapper">
+                        <div class="top10-number">9</div>
+
+                        <div class="top10-card">
+                            <img src="/images/index/lokah.webp">
+
+                            <div class="top10-overlay">
+                                <h5 class="top10-title">Lokah</h5>
+
+                                <div class="top10-badges">
+                                    <span class="top10-badge age">U/A 13+</span>
+                                    <span class="top10-badge type">Movie</span>
+                                </div>
+
+                                <button class="top10-watchlist">
+                                    <span>+</span> Add To Watchlist
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="live-card">
-                <img src="/images/index/news2.webp" alt="News">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Times Now</h5>
+            <button class="top10-scroll-btn top10-right-btn">❯</button>
 
-                    <div class="live-badges">
-                        <span class="badge live">LIVE</span>
-                        <span class="badge type">Navbharat</span>
-                    </div>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/news3.webp" alt="News">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">TV 9</h5>
-
-                    <div class="live-badges">
-                        <span class="badge live">LIVE</span>
-                        <span class="badge type">News</span>
-                    </div>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/news4.webp" alt="News">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Times Now</h5>
-
-                    <div class="live-badges">
-                        <span class="badge live">LIVE</span>
-                        <span class="badge type">News</span>
-                    </div>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/news5.webp" alt="News">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Z News</h5>
-
-                    <div class="live-badges">
-                        <span class="badge live">LIVE</span>
-                        <span class="badge type">News</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">New Releases</h3>
-            <a href="#" class="text-white">See All</a>
+            <h3 class="text-white m-0">Top Tier Anime</h3>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime1.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime5.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime8.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime2.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime1.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime6.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime4.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime3.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime5.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/anime6.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">New Releases</h3>
-            <a href="#" class="text-white">See All</a>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <!-- Banner -->
     <div class="text-center my-4">
         <a href="#"><img src="/images/index/maharani.webp" class="img-fluid rounded-2 wifi-banner"></a>
     </div>
 
-    <div class="movie-section mt-3">
+    <div class="live-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">Top Tier Anime</h3>
-            <a href="#" class="text-white">See All</a>
+            <h3 class="text-white m-0">Live News</h3>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
 
-        <div class="movie-scroller">
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime1.webp" alt="movie">
+        <div class="live-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
 
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Demon Slayer</h5>
+                <div class="live-scroller">
+                    <div class="live-scroll-inner">
 
-                        <div class="badges">
-                            <span class="badge age">A 18+</span>
-                            <span class="badge type">Action</span>
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/news1.webp" alt="News">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">TV Live</h5>
+
+                                    <div class="live-badges">
+                                        <span class="badge live">Trending</span>
+                                        <span class="badge type">News</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/news2.webp" alt="News">
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime2.webp" alt="movie">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">Times Now</h5>
 
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Assassination Classroom</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
+                                    <div class="live-badges">
+                                        <span class="badge live">Trending</span>
+                                        <span class="badge type">News</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/news3.webp" alt="News">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">TV 9</h5>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime3.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">RE:Zero</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
+                                    <div class="live-badges">
+                                        <span class="badge live">Trending</span>
+                                        <span class="badge type">News</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/news4.webp" alt="News">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">Times Now</h5>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime4.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">ONE PUNCH MAN</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
+                                    <div class="live-badges">
+                                        <span class="badge live">Trending</span>
+                                        <span class="badge type">News</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
                     </div>
                 </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime5.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Hunter X Hunter</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime6.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Kaguya Sama</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime7.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">JoJo's Bizarre Adventure</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/anime8.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Mob Psycho 100</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 16+</span>
-                            <span class="badge type">Action</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
     </div>
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">Filmfare OTT Awards 2025</h3>
-            <a href="#" class="text-white">See All</a>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">Reality TV Shows</h3>
-            <a href="#" class="text-white">See All</a>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <div class="lang-section mt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">Explore In Your Language</h3>
-            <a href="#" class="text-white">See All</a>
         </div>
-        <div class="lang-scroller">
-            <div class="lang-card">
-                <img src="/images/index/Gujarati.webp" alt="Gujarati">
 
-                <div class="lang-overlay">
-                    <h4 class="lang-title">Gujarati</h4>
+        <div class="lang-scroll-container">
+            <button class="scroll-btn lang-left">❮</button>
+
+            <div class="lang-scroller">
+                <div class="lang-scroll-inner">
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/Gujarati.webp" alt="Gujarati">
+                            <div class="lang-overlay"><h4 class="lang-title">Gujarati</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/English.png" alt="English">
+                            <div class="lang-overlay"><h4 class="lang-title">English</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/Punjabi.png" alt="Punjabi">
+                            <div class="lang-overlay"><h4 class="lang-title">Punjabi</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/Hindi.png" alt="Hindi">
+                            <div class="lang-overlay"><h4 class="lang-title">Hindi</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/Bengali.webp" alt="Bengali">
+                            <div class="lang-overlay"><h4 class="lang-title">Bengali</h4></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-card-wrapper">
+                        <div class="lang-card">
+                            <img src="/images/index/Tamil.png" alt="Tamil">
+                            <div class="lang-overlay"><h4 class="lang-title">Tamil</h4></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="lang-card">
-                <img src="/images/index/English.png" alt="English">
 
-                <div class="lang-overlay">
-                    <h4 class="lang-title">English</h4>
-                </div>
-            </div>
-            <div class="lang-card">
-                <img src="/images/index/Punjabi.png" alt="Punjabi">
-
-                <div class="lang-overlay">
-                    <h4 class="lang-title">Punjabi</h4>
-                </div>
-            </div>
-            <div class="lang-card">
-                <img src="/images/index/Hindi.png" alt="Hindi">
-
-                <div class="lang-overlay">
-                    <h4 class="lang-title">Hindi</h4>
-                </div>
-            </div>
-            <div class="lang-card">
-                <img src="/images/index/Bengali.webp" alt="Bengali">
-
-                <div class="lang-overlay">
-                    <h4 class="lang-title">Bengali</h4>
-                </div>
-            </div>
-            <div class="lang-card">
-                <img src="/images/index/Tamil.png" alt="Tamil">
-
-                <div class="lang-overlay">
-                    <h4 class="lang-title">Tamil</h4>
-                </div>
-            </div>
+            <button class="scroll-btn lang-right">❯</button>
         </div>
     </div>
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">Reality TV Shows</h3>
-            <a href="#" class="text-white">See All</a>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">Remembering Dharmendra</h3>
-            <a href="#" class="text-white">See All</a>
+            <h3 class="text-white m-0">Reality TV Shows</h3>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <!-- Banner -->
     <div class="text-center my-4">
@@ -1919,430 +1797,344 @@
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-white m-0">Trending Now</h3>
-            <a href="#" class="text-white">See All</a>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/super30.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/insidiousthelastkey_portrait_thumb.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Insidious The Lastkey</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/lokah.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
                 </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/super30.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Super 30</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/lokah.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Lokah</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">Movie</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
-                    </div>
-                </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">Live TV</h3>
-            <a href="#" class="text-white">See All</a>
+            <h3 class="text-white m-0">Live Tv</h3>
+            <a href="seeall.html" class="text-white">See All</a>
         </div>
-
-        <div class="movie-scroller">
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv1.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">ABP News</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+        <div class="movie-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+            <div class="movie-scroller">
+                <div class="movie-scroll-inner">
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv1.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv2.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">TV 9 Bharatvarsh</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv2.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-            
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv3.webp" alt="movie">
 
-                    <div class="card-overlay">
-                        <h5 class="movie-title">Z News</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv3.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-
-                <div class="movie-card">
-                    <img src="/images/index/livetv4.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">India TV</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv4.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv5.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">9X M</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv5.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
 
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv6.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">News Nation</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv6.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-
-                <div class="movie-card">
-                    <img src="/images/index/livetv7.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">WION</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv7.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-                <div class="movie-card">
-                    <img src="/images/index/livetv8.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">TV 9 Marathi</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv8.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Insidious The Lastkey</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-            </a>
-
-            <a href="singlepage.html">
-
-                <div class="movie-card">
-                    <img src="/images/index/livetv9.webp" alt="movie">
-
-                    <div class="card-overlay">
-                        <h5 class="movie-title">DD News</h5>
-
-                        <div class="badges">
-                            <span class="badge age">U/A 13+</span>
-                            <span class="badge type">News</span>
-                        </div>
-
-                        <button class="watchlist-btn">
-                            <span>+</span> Add To Watchlist
-                        </button>
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv9.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Super 30</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
                     </div>
+
+                    <div class="movie-card-wrapper">
+                        <a href="singlepage.html" class="movie-link">
+                            <div class="movie-card">
+                                <img src="/images/index/livetv1.webp" alt="movie">
+                                <div class="card-overlay">
+                                    <h5 class="movie-title">Lokah</h5>
+                                    <div class="badges">
+                                        <span class="badge age">U/A 13+</span>
+                                        <span class="badge type">Movie</span>
+                                    </div>
+                                    <button class="watchlist-btn"><span>+</span> Add To Watchlist</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
-            </a>
-            
+            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
-    </div>
+    </div> 
 
     <!-- Banner -->
     <div class="text-center my-4">
-        <a href="#"><img src="/images/index/crorepati.webp" class="img-fluid rounded-2 wifi-banner"></a>
+        <a href="#"><img src="/images/index/banner.png" class="img-fluid rounded-2 wifi-banner"></a>
     </div>
 
     <!-- Upper Footer Section -->
@@ -2580,6 +2372,124 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const numberInput = document.getElementById("mobileInput");     
+    const errorMessage = document.getElementById("mobileError"); 
+    const otpError = document.getElementById("otpError");   
+    const otpModal = new bootstrap.Modal(document.getElementById("otpModal"));
+    const loginModal = new bootstrap.Modal(document.getElementById("loginModal"));
+    const otpTriggerButton = document.getElementById("continueBtn"); 
+    const otpInputs = document.querySelectorAll(".otp-input");
+    const resendTimer = document.getElementById("resendTimer");
+
+    let timerInterval;
+
+    // Open OTP Modal
+    otpTriggerButton.addEventListener("click", () => {
+        const number = numberInput.value.trim();
+
+        if (number.length !== 10 || isNaN(number)) {
+            errorMessage.style.display = "block";
+            errorMessage.textContent = "Enter a valid 10-digit mobile number";
+            return;
+        }
+
+        errorMessage.style.display = "none";
+        document.getElementById("otpMobile").textContent = number;
+
+        loginModal.hide();
+        otpModal.show();
+
+        startOTPTimer();
+    });
+
+    // Auto move + backspace handling
+    otpInputs.forEach((input, index) => {
+        input.addEventListener("input", () => {
+            if (input.value.length === 1 && index < otpInputs.length - 1) {
+                otpInputs[index + 1].focus();
+            }
+        });
+
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Backspace" && input.value === "" && index > 0) {
+                otpInputs[index - 1].focus();
+            }
+        });
+    });
+
+    // VERIFY button action
+    document.querySelector("#otpModal button.btn").addEventListener("click", () => {
+        let otp = "";
+        otpInputs.forEach(i => otp += i.value);
+
+        if (otp.length === 4 && !isNaN(otp)) {
+            otpError.style.display = "none";
+            alert("OTP verified successfully!");
+
+            otpModal.hide();
+            otpInputs.forEach(i => i.value = "");
+        } else {
+            otpError.style.display = "block";
+            otpError.textContent = "Please enter a valid 4-digit OTP.";
+        }
+    });
+
+
+    // Start OTP countdown
+    function startOTPTimer() {
+        let time = 60;
+        resendTimer.textContent = `Resend OTP in (0:${time})`;
+        resendTimer.style.pointerEvents = "none";
+        resendTimer.style.opacity = "0.5";
+
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            time--;
+            resendTimer.textContent = `Resend OTP in (0:${time < 10 ? "0" + time : time})`;
+
+            if (time === 0) {
+                clearInterval(timerInterval);
+                resendTimer.innerHTML = `<a href="#" id="resendBtn" style="color:#fff;">Resend OTP</a>`;
+                resendTimer.style.pointerEvents = "auto";
+                resendTimer.style.opacity = "1";
+
+                document.getElementById("resendBtn").addEventListener("click", () => {
+                    startOTPTimer(); // restart timer
+                    otpInputs.forEach(i => i.value = "");
+                    otpInputs[0].focus();
+                });
+            }
+        }, 1000);
+    }
+
+    const scrollers = document.querySelectorAll(".movie-scroll-container");
+
+    scrollers.forEach(container => {
+        const scroller = container.querySelector(".movie-scroller");
+        const leftBtn = container.querySelector(".left-btn");
+        const rightBtn = container.querySelector(".right-btn");
+
+        const scrollAmount = 300; // how much scroll per click
+
+        leftBtn.addEventListener("click", () => {
+            scroller.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth"
+            });
+        });
+
+        rightBtn.addEventListener("click", () => {
+            scroller.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        });
+    });
+
+
+
+</script>
 
 </body>
 </html>

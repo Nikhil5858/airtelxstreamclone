@@ -663,42 +663,55 @@ body {
 .top10-right-btn { right: -10px; }
 
 
-
 .live-section {
     padding: 0 20px;
     overflow: visible !important;
 }
 
+.live-scroll-container {
+    position: relative;
+    overflow: visible !important;
+}
+
 .live-scroller {
     display: flex;
-    gap: 18px;
     overflow-x: auto;
-    overflow: visible;
-    padding-bottom: 40px;
-    scroll-behavior: smooth;
+    overflow-y: visible !important;
+    padding-top: 40px;     
+    padding-bottom: 60px;  
     scrollbar-width: none;
+}
+
+.live-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.live-scroll-inner {
+    display: flex;
+    gap: 18px;
+    overflow: visible !important;
+}
+
+.live-card-wrapper {
+    position: relative;
+    overflow: visible !important;
 }
 
 .live-card {
     position: relative;
-    min-width: 275px;
-    max-width: 275px;
+    width: 275px;
     height: 170px;
-    border-radius: 8px;
-    overflow: visible !important;
-    background: #1f1f1f;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 10px;
+    transform-origin: center;
+    transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
     z-index: 1;
 }
 
 .live-card:hover {
-    transform: translateY(-18px) scale(1.08);
-    border: 2px solid rgba(255,255,255,0.4);
-    box-shadow:
-        0 22px 40px rgba(0,0,0,0.75),
-        0 0 22px rgba(255,255,255,0.35);
+    transform: scale(1.18);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
     z-index: 9999;
 }
 
@@ -706,17 +719,17 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .live-overlay {
     position: absolute;
     inset: 0;
     padding: 12px;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(to top, rgba(0,0,0 ,0.92) 35%, rgba(0,0,0,0.1) 100%);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease-in-out;
+    transition: opacity .3s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -727,6 +740,9 @@ body {
     visibility: visible;
 }
 
+.live-scroll-container:hover .scroll-btn {
+    opacity: 1;
+}
 
 /* Title */
 .live-title {
@@ -807,55 +823,84 @@ body {
 }
 
 
-/* Language Section */
 .lang-section {
     padding: 0 20px;
+    overflow: visible !important;
 }
 
+.lang-scroll-container {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Scroller */
 .lang-scroller {
-    display: flex;
-    gap: 18px;
     overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
+    overflow-y: visible !important;
+
+    padding-top: 40px;
+    padding-bottom: 60px;
+
     scrollbar-width: none;
 }
-
 .lang-scroller::-webkit-scrollbar {
     display: none;
 }
 
-/* The small square cards */
+.lang-scroll-inner {
+    display: flex;
+    gap: 18px;
+    overflow: visible !important;
+}
+
+/* Wrapper */
+.lang-card-wrapper {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Card */
 .lang-card {
     position: relative;
     width: 170px;
     height: 170px;
-    background: #1f1f1f;
-    border-radius: 4px;
-    overflow: hidden;
-    flex-shrink: 0;
-    transition: transform 0.25s ease;
-    cursor: pointer;
+    border-radius: 10px;
+    transform-origin: center;
+    transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
+    z-index: 1;
+    overflow: visible;
+}
+
+.lang-card:hover {
+    transform: scale(1.18);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    z-index: 9999;
 }
 
 .lang-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .lang-overlay {
     position: absolute;
     inset: 0;
-    padding: 10px;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%);
+    padding: 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 40%, transparent 100%);
+    
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.25s ease-in-out;
+
     display: flex;
     align-items: flex-end;
     justify-content: center;
+
+    transition: opacity .25s ease;
 }
 
 .lang-card:hover .lang-overlay {
@@ -864,11 +909,40 @@ body {
 }
 
 .lang-title {
-    color: white;
+    color: #fff;
     font-size: 18px;
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0;
 }
+
+
+/* Arrows */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.8);
+    font-size: 42px;
+    cursor: pointer;
+    opacity: 0;
+    transition: .25s ease;
+    z-index: 99999;
+}
+
+.lang-scroll-container:hover .scroll-btn {
+    opacity: 1;
+}
+
+.scroll-btn:hover {
+    transform: translateY(-50%) scale(1.15);
+    color: white;
+}
+
+.lang-left { left: -10px; }
+.lang-right { right: -10px; }
+
 
 
 .upper-footer{

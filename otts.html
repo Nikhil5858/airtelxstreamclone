@@ -41,73 +41,62 @@
 
     <!-- OTT Logos Row -->
     <div class="live-section mt-3">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="text-white m-0">Explore OTTs</h3>
-            <a href="#" class="text-white">See All</a>
-        </div>
-        <div class="live-scroller">
-            <div class="live-card">
-                <img src="/images/index/ottlogo1.webp" alt="Jio Hotstar">
+        <div class="live-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Jio Hotstar</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo2.webp" alt="Sony liv">
+            <div class="live-scroller">
+                <div class="live-scroll-inner">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Sony liv</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo3.webp" alt="Z 5">
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo1.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo2.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo3.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo4.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo5.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo6.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo7.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo8.webp" alt="News">
+                        </div>
+                    </div>
+                    <div class="live-card-wrapper">
+                        <div class="live-card">
+                            <img src="/images/index/ottlogo9.webp" alt="News">
+                        </div>
+                    </div>
 
-                <div class="live-overlay">
-                    <h5 class="live-title">Z 5</h5>
                 </div>
             </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo4.webp" alt="MX Player">
 
-                <div class="live-overlay">
-                    <h5 class="live-title">MX Player</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo5.webp" alt="Sun Nxt">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Sun Nxt</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo6.webp" alt="Times Play">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Times Play</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo7.webp" alt="Lionsgate Play">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Lionsgate Play</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo8.webp" alt="Hungama Ott">
-                <div class="live-overlay">
-                    <h5 class="live-title">Hungama Ott</h5>
-                </div>
-            </div>
-            <div class="live-card">
-                <img src="/images/index/ottlogo9.webp" alt="Adda Times">
-
-                <div class="live-overlay">
-                    <h5 class="live-title">Adda Times</h5>
-                </div>
-            </div>
+            <button class="scroll-btn right-btn">❯</button>
         </div>
     </div>
     <!-- OTT Logos Row -->
@@ -1656,6 +1645,20 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelector(".left-btn").addEventListener("click", function () {
+        document.querySelector(".live-scroller").scrollBy({
+            left: -300,
+            behavior: "smooth"
+        });
+    });
 
+    document.querySelector(".right-btn").addEventListener("click", function () {
+        document.querySelector(".live-scroller").scrollBy({
+            left: 300,
+            behavior: "smooth"
+        });
+    });
+</script>
 </body>
 </html>
