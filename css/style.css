@@ -10,22 +10,19 @@ body {
   font-style: normal;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 100vh;
-
-  background: #25272a; 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  transition: width 0.3s ease;
-  padding-top: 20px;
+.page-bg {
+    background: linear-gradient(
+      to bottom,
+      #2a2a2a 0%,
+      #323232 30%,
+      #363636 60%,
+      #181a1c 100%
+    );
 }
 
 .main-content {
+    position: relative;
+    z-index: 1;
   margin-left: 70px;          
   padding: 20px;
   min-height: 100vh;
@@ -178,21 +175,51 @@ body {
     transition: opacity .8s ease-in-out;
 }
 
-.sidebar:hover ~ .main-content {
-  margin-left: 150px;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+
+  background: #2a2a2a;
+  backdrop-filter: none;
+  transition: 0.25s;
+  z-index: 50;
 }
 
 .sidebar:hover {
-    width: 150px;
-    background: #25272a;  
-    backdrop-filter: none;
+  width: 150px;
+  background: rgba(0,0,0,0.20);
+  backdrop-filter: blur(0px);
 }
 
-.sidebar .logo {
-  text-align: center;
-  margin-bottom: 30px;
+
+.sidebar-fade {
+    position: fixed;
+    top: 0;
+    left: 70px;
+    width: 0;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 40;
+
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.60),
+        rgba(0,0,0,0.30),
+        rgba(0,0,0,0)
+    );
+
+    transition: 0.30s ease;
 }
 
+.sidebar:hover ~ .sidebar-fade {
+    left: 150px;     /* sidebar expanded width */
+    width: 350px;    /* how far the gradient spreads */
+    opacity: 1;
+}
 .sidebar .logo .brand {
   width: 40px;
 }
@@ -234,6 +261,10 @@ body {
 
 .sidebar .menu li:hover a{
   color: #fff;
+}
+
+.sidebar:hover ~ .main-content + .footer {
+  margin-left: 150px;
 }
 
 .category-wrapper {
@@ -937,10 +968,6 @@ body {
   color: #d2d2d2;
   margin-left: 70px;     
   transition: margin-left 0.3s ease;
-}
-
-.sidebar:hover ~ .main-content + .footer {
-  margin-left: 150px;
 }
 
 .footer-links {
