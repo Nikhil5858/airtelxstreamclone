@@ -176,17 +176,22 @@ body {
 }
 
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70px;
+    height: 100vh;
 
-  background: #2a2a2a;
-  backdrop-filter: none;
-  transition: 0.25s;
-  z-index: 50;
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+
+    transition: width 0.25s ease;
+    z-index: 50;
 }
+
 
 .sidebar:hover {
   width: 150px;
@@ -220,16 +225,28 @@ body {
     width: 350px;    /* how far the gradient spreads */
     opacity: 1;
 }
+.sidebar .logo {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
 .sidebar .logo .brand {
   width: 40px;
+  margin-top: 50px;
 }
 
 .sidebar .menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    flex: 1;                   /* take all remaining height */
+    overflow-y: auto;          /* enable scroll only inside menu */
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0;
+    margin: 0;
 }
-
+.sidebar .menu::-webkit-scrollbar {
+    width: 0;
+}
 .sidebar .menu li a{
   display: flex;
   align-items: center;
@@ -263,9 +280,6 @@ body {
   color: #fff;
 }
 
-.sidebar:hover ~ .main-content + .footer {
-  margin-left: 150px;
-}
 
 .category-wrapper {
   background: transparent;
