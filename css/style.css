@@ -235,12 +235,12 @@ body {
   padding: 6px 22px;
   font-size: 15px;
   cursor: pointer;
-  transition: 0.25s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
 /* Hover Effects */
 .category-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: #4f5866;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -256,7 +256,7 @@ body {
 }
 
 .dropdown-menu-dark .dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: #4f5866;
   opacity: 1;
 }
 
