@@ -42,118 +42,149 @@ body {
   transition: margin-left 0.3s ease;
 }
 
+/* 1. Banner size */
 .hero-slide-img {
-  height: 600px;
-  object-fit: cover;
-  filter: brightness(0.78);
+    height: 600px;
+    object-fit: cover;
 }
 
-.carousel-caption {
-  position: absolute;
-  bottom: 80px !important;      
-  left: 70px !important;        
-  right: auto !important;
-  top: auto !important;
-  text-align: left !important;
-  width: auto;
-  max-width: 600px;
-  transform: none !important;
-  padding: 0 !important;
+/* 2. Dark left-to-right gradient overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.65) 20%, rgba(0,0,0,0) 60%);
+    z-index: 2;
 }
 
-.hero-caption {
-  position: relative;
-  text-align: left;
-  width: 100%;
-  padding: 0;
+/* 3. Content layout */
+.hero-content {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    z-index: 5;
 }
 
-.hero-caption h2 {
-  font-size: 2.8rem;           
-  font-weight: 700;
-  margin-bottom: 12px;
+/* Left Content */
+.hero-left {
+    max-width: 600px;
 }
 
-.tagline {
-  font-size: 1rem;
-  opacity: 0.9;
-  margin-bottom: 20px;
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
 }
 
-.ott-badge {
-  background: rgba(255, 255, 255, 0.14);
-  padding: 6px 14px;
-  display: inline-block;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  font-weight: 600;
+.hero-tags {
+    display: flex;
+    gap: 8px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 16px;
+    font-size: 1.1rem;
 }
 
-.caption-buttons .btn {
-  border-radius: 8px;
-  padding: 12px 22px;
-  font-weight: 600;
-  margin-right: 12px;
-  backdrop-filter: blur(4px);
+.hero-dot {
+    opacity: 0.7;
 }
 
-.watch-btn {
-  background: linear-gradient(to right, #fff, #dcdcdc);
-  color: #000;
+.hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #00b0ff;
 }
 
-.add-btn {
-  border: 1px solid rgba(255,255,255,0.7);
-  color: #fff;
+.rating-text {
+    color: #00b0ff;
+    font-size: .9rem;
+    letter-spacing: 1px;
 }
 
-.carousel-item {
-  transition: opacity 1s ease-in-out;
+.rating-diamond {
+    font-size: 1rem;
 }
 
+/* Right Buttons */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.hero-watchlist-btn {
+    width: 260px;
+    padding: 14px 20px;
+
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.35);
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.hero-watchnow-btn {
+    width: 260px;
+    padding: 16px 30px;
+
+    background: white;
+    color: black;
+
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+}
+
+/* 4. Arrows */
 .hero-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20;
+    bottom: 280px;
 
-    width: 55px;
-    height: 55px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(4px);
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    border: 1px solid rgba(255,255,255,0.25);
     cursor: pointer;
-
-    transition: all 0.25s ease;
+    z-index: 9;
+    font-size: 26px;
+    color: white;
+    transition: 0.25s ease;
 }
 
 .hero-arrow:hover {
+    border-color: white;
     background: rgba(255,255,255,0.25);
-    border-color: rgba(255,255,255,0.5);
-    transform: translateY(-50%) scale(1.12);
+    transform: scale(1.1);
 }
 
-.hero-arrow.prev {
-    left: 40px;
+.hero-prev { left: 60px; }
+.hero-next { right: 60px; }
+
+/* Fade transition */
+.carousel-item {
+    transition: opacity .8s ease-in-out;
 }
 
-.hero-arrow.next {
-    right: 40px;
-}
-
-.arrow-icon {
-    font-size: 26px;
-    font-weight: bold;
-    color: white;
-    opacity: 0.9;
-    pointer-events: none;
-}
 
 
 .sidebar:hover ~ .main-content {
