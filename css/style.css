@@ -276,24 +276,24 @@ body {
 }
 
 
-.movie-section {
+/* .movie-section {
     padding: 0 20px;
     overflow: visible !important;
-}
+} */
 
 
-.movie-scroller {
+/* overflow: visible !important; */
+/* .movie-scroller {
     display: flex;
-    gap: 18px;
-    /* overflow: visible !important; */
-    overflow-x: auto;
+    gap: 18px; */
+    /* overflow-x: auto;
     overflow-y: visible;
     position: relative;
     z-index: 1;
     padding-bottom: 40px;
-}
+} */
 
-.movie-card-wrapper {
+/* .movie-card-wrapper {
     position: relative;
     overflow: visible !important;
     z-index: 2;
@@ -315,34 +315,70 @@ body {
     display: block;
     overflow: visible;
     text-decoration: none;
+} */
+
+
+.movie-section {
+    padding: 0 20px;
+    overflow: visible; 
 }
 
-/* CARD */
+.movie-scroll-container {
+    position: relative;
+    overflow: visible;
+}
+
+.movie-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: visible !important;
+    padding-top: 40px;     
+    padding-bottom: 60px;   
+    scrollbar-width: none;
+}
+
+
+.movie-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-scroll-inner {
+    display: flex;
+    gap: 18px;
+    overflow: visible !important;
+}
+
+.movie-card-wrapper {
+    position: relative;
+    overflow: visible !important;
+}
+
 .movie-card {
     position: relative;
     width: 180px;
     height: 260px;
     border-radius: 10px;
-    overflow: visible !important;
-    background: #1f1f1f;
-    cursor: pointer;
-    transition: transform .25s ease, box-shadow .25s ease;
+    transform-origin: center;
+    transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
+    z-index: 1;
 }
 
 .movie-card:hover {
-    transform: translateY(-22px) scale(1.15);
-    border: 3px solid rgb(120,120,120);
-    z-index: 999999;    
+    transform: scale(1.18);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    z-index: 9999;
 }
 
 .movie-card img {
-    border-radius: 10px;
+    border-radius: 5px;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Overlay */
 .card-overlay {
     position: absolute;
     inset: 0;
@@ -361,7 +397,6 @@ body {
     visibility: visible;
 }
 
-/* Title */
 .movie-title {
     color: #fff;
     font-size: 18px;
@@ -369,7 +404,6 @@ body {
     margin: 0 0 5px 0;
 }
 
-/* Badges */
 .badges {
     display: flex;
     gap: 6px;
@@ -411,31 +445,28 @@ body {
     background: rgba(255,255,255,0.22);
 }
 
-.movie-scroll-container {
-    position: relative;
-}
 
 .scroll-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: rgba(255,255,255,0.12);
-    color: white;
-    font-size: 22px;
+    background: none;
+    border: none;
+
+    width: auto;
+    height: auto;
+
+    padding: 0;
+
+    font-size: 42px; /* perfect arrow size */
+    color: rgba(255,255,255,0.8);
+    font-weight: 200;
+
     cursor: pointer;
-    z-index: 9999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     opacity: 0;
-    transition: 0.25s ease;
-    backdrop-filter: blur(8px);
+    transition: opacity .25s ease, transform .25s ease;
+
+    z-index: 9999;
 }
 
 .movie-scroll-container:hover .scroll-btn {
@@ -443,18 +474,19 @@ body {
 }
 
 .scroll-btn:hover {
-    background: rgba(255,255,255,0.25);
-    border-color: rgba(255,255,255,0.5);
     transform: translateY(-50%) scale(1.15);
+    color: white;
 }
 
 .left-btn {
-    left: -10px;
+    left: -10px; /* adjust for your layout */
 }
 
 .right-btn {
     right: -10px;
 }
+
+
 
 
 /* Main section */
