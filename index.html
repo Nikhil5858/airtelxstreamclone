@@ -119,7 +119,6 @@
 
         <div class="carousel-inner">
 
-            <!-- SLIDE 1 -->
             <div class="carousel-item active">
                 <img src="/images/index/slider4.webp" class="d-block w-100 hero-slide-img">
 
@@ -154,7 +153,6 @@
                 </div>
             </div>
 
-            <!-- SLIDE 2 -->
             <div class="carousel-item">
                 <img src="/images/index/slider2.webp" class="d-block w-100 hero-slide-img">
                 <div class="hero-overlay"></div>
@@ -179,7 +177,6 @@
                 </div>
             </div>
 
-            <!-- SLIDE 3 -->
             <div class="carousel-item">
                 <img src="/images/index/slider3.webp" class="d-block w-100 hero-slide-img">
 
@@ -190,7 +187,6 @@
                         <h2 class="hero-title">Ram Setu</h2>
 
                         <div class="hero-tags">
-                            <span class="hero-tag">U/A 7+</span>
                             <span class="hero-dot">•</span>
                             <span class="hero-tag">Drama</span>
                             <span class="hero-dot">•</span>
@@ -210,7 +206,6 @@
                 </div>
             </div>
 
-            <!-- SLIDE 4 -->
             <div class="carousel-item">
                 <img src="/images/index/slider1.webp" class="d-block w-100 hero-slide-img">
 
@@ -238,7 +233,6 @@
 
         </div>
 
-        <!-- NAV ARROWS -->
         <button class="hero-arrow hero-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
             <i>&lt;</i>
         </button>
@@ -248,8 +242,6 @@
         </button>
 
     </div>
-
-
 
     <!-- Hero Slider End -->
      
@@ -534,7 +526,7 @@
                 <div class="top10-scroll-inner">
 
                     <!-- ITEM 1 -->
-                    <div class="top10-card-wrapper">
+                    <div class="top10-card-wrapper ms-4">
                         <div class="top10-number">1</div>
 
                         <div class="top10-card ms-3">
@@ -1321,6 +1313,64 @@
             <button class="scroll-btn right-btn">❯</button>
         </div>
     </div> 
+
+    <div class="live-section mt-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="text-white m-0">Live Matches</h3>
+            <a href="seeall.html" class="text-white">See All</a>
+        </div>
+
+        <div class="live-scroll-container">
+            <button class="scroll-btn left-btn">❮</button>
+
+                <div class="live-scroller">
+                    <div class="live-scroll-inner">
+
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/livematch1.htm" alt="News">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">Delhi vs Tripura</h5>
+
+                                    <div class="live-badges">
+                                        <span class="badge live">Cricket</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/livematch2.htm" alt="News">
+
+                                <div class="live-overlay">
+                                    <h5 class="live-title">FIh Hockey Mens's Junior cup</h5>
+
+                                    <div class="live-badges">
+                                        <span class="badge live">Hockey</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="live-card-wrapper">
+                            <div class="live-card">
+                                <img src="/images/index/livematch3.htm" alt="News">
+                                <div class="live-overlay">
+                                    <h5 class="live-title">Andhra vs Railways</h5>
+
+                                    <div class="live-badges">
+                                        <span class="badge live">Cricket</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <button class="scroll-btn right-btn">❯</button>
+        </div>
+    </div>
 
     <div class="movie-section mt-3">
         <div class="d-flex justify-content-between align-items-center">
@@ -2594,6 +2644,21 @@
             behavior: "smooth"
         });
     });
+
+    document.querySelector(".top10-left-btn").addEventListener("click", function () {
+        document.querySelector(".top10-scroller").scrollBy({
+            left: -300,
+            behavior: "smooth"
+        });
+    });
+
+    document.querySelector(".top10-right-btn").addEventListener("click", function () {
+        document.querySelector(".top10-scroller").scrollBy({
+            left: 300,
+            behavior: "smooth"
+        });
+    });
+
 
 
 </script>
