@@ -485,8 +485,8 @@ body {
     gap: 18px;
     overflow-x: auto;
     overflow-y: visible !important;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 23px;
+    padding-bottom: 23px;
     scrollbar-width: none;
 }
 
@@ -507,16 +507,20 @@ body {
 
 .top10-number {
     position: absolute;
-    bottom: 8px;
+    bottom: 0;
     left: -45px;
     font-size: 160px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.12);
-
+    font-weight: 900;
     line-height: 130px;
+    color: transparent;
+    -webkit-text-stroke: 6px #ffffff;
+    text-shadow: 6px #ffffff;
+    opacity: 0.28;
     z-index: 0;
     pointer-events: none;
 }
+
+
 
 .top10-card {
     position: relative;
