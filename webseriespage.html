@@ -6,7 +6,7 @@
     <title>AirtelXstream</title>
 
     <link rel="icon" type="image/x-icon" href="/images/airtel-xstream-play-logo-hd.png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,44 +14,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <div class="page-bg">
 
     <div class="sidebar">
-        <div class="logo mt-2">
-            <img src="/images/xsteamplay.png" class="brand">
-        </div>
-        <ul class="menu">
-            <li><a href="/index.html"><i class="bi bi-house"></i><span>Home</span></a>
-            </li>
-            <li><a href="/search.html"><i class="bi bi-search"></i><span>Search</span></a>
-            </li>
-            <li><a href="/otts.html"><i class="bi bi-layers"></i><span>OTTs</span></a>
-            </li>
-            <li><a href="/free.html"><i class="bi bi-play-circle"></i><span>Free</span></a>
-            </li>
-            <li><a href="/myplan.html"><i class="bi bi-play-btn"></i><span>My Plans</span></a>
-            </li>
-            <li><a href="/profile.html"><i class="bi bi-person-circle"></i><span>Profile</span></a>
-            </li>
-            <li><a href="https://play.google.com/store/apps/details?id=tv.accedo.airtel.wynk&_branch_match_id=1522531487299482637&utm_source=Website&utm_campaign=Top_Bottom_CTA&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzy9IzdNLzCwqSc2pKC4pSk3M1cvM00%2F0DMzzCg%2BwcHdKsq8rSk1LLSrKzEuPTyrKLy9OLbJ1ywSK5VcAAJQeFpZEAAAA" target="_blank"><i class="bi bi-phone"></i><span>Get App</span></a>
-            </li>
-        </ul>
+            <div class="logo mt-2">
+                <img src="./images/xsteamplay.png" class="brand">
+            </div>
+            <ul class="menu">
+                <li><a href="./index.html"><i class="bi bi-house"></i><span>Home</span></a>
+                </li>
+                <li><a href="./search.html"><i class="bi bi-search"></i><span>Search</span></a>
+                </li>
+                <li><a href="./otts.html"><i class="bi bi-layers"></i><span>OTTs</span></a>
+                </li>
+                <li><a href="./free.html"><i class="bi bi-play-circle"></i><span>Free</span></a>
+                </li>
+                <li><a href="./myplan.html"><i class="bi bi-play-btn"></i><span>My Plans</span></a>
+                </li>
+                <li><a href="./profile.html"><i class="bi bi-person-circle"></i><span>Profile</span></a>
+                </li>
+                <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i class="bi bi-box-arrow-in-right"></i><span>Log In</span>
+                    </a>
+                </li>
+                <li><a href="https://play.google.com/store/apps/details?id=tv.accedo.airtel.wynk&_branch_match_id=1522531487299482637&utm_source=Website&utm_campaign=Top_Bottom_CTA&utm_medium=Website&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXzy9IzdNLzCwqSc2pKC4pSk3M1cvM00%2F0DMzzCg%2BwcHdKsq8rSk1LLSrKzEuPTyrKLy9OLbJ1ywSK5VcAAJQeFpZEAAAA" target="_blank"><i class="bi bi-phone"></i><span>Get App</span></a>
+                </li>
+            </ul>
     </div>
     <div class="sidebar-fade"></div>
-
     <div class="main-content">
 
-        <!-- Single Movie Viewer Section -->
         <div class="smv-hero">
-            <div class="smv-bg" style="background-image: url('/images/single/single2.webp');"></div>
+            <div class="smv-bg" style="background-image: url('/images/episodes/maharani1.webp');"></div>
             <div class="smv-overlay"></div>
             <div class="container smv-content text-light">
-                <h1 class="fw-bold display-4">Super 30</h1>
+                <h1 class="fw-bold display-4">Maharani</h1>
                 <p class="smv-meta small text-white-50 mb-1">
-                    U | Biopic | Hindi | 2019
+                    U | Action | Drama | Showbizz | Hindi | 2021
                 </p>
                 <p class="smv-desc w-50 fs-6">
-                    Based on the life of ace mathematician Anand Kumar, who trained 30 underprivileged students to crack one of the toughest entrance exams in India - IIT.
+                    2021 political drama web series on SonyLIV starring Huma Qureshi and the upcoming 2025 Gujarati family comedy-drama film starring Manasi Parekh
                 </p>
                 <p class="smv-audio small text-white-50">Audio Available in: Hindi</p>
                 <div class="smv-actions d-flex gap-3 mt-3">
@@ -69,18 +73,18 @@
             </div>
         </div>
 
-        <!-- WiFi Banner -->
         <div class="text-center my-4">
             <a href="https://www.airtel.in/new-connection/broadband/?price=499&utm_source=xstream&utm_campaign=bb_acq_xstream_continue_watch_web"><img src="/images/index/wifi-banner.webp" class="img-fluid rounded-2 wifi-banner"></a>
         </div>
 
-        
         <div class="smv-tabs-container mt-4">
             <!-- Tabs -->
             <div class="smv-tabs">
-                <button class="smv-tab active" data-target="#similar">More like this</button>
+                <button class="smv-tab active" data-target="#episodes">Episodes</button>
+                <button class="smv-tab" data-target="#similar">More like this</button>
                 <button class="smv-tab" data-target="#cast">Cast & more</button>
             </div>
+
 
             <!-- Underline -->
             <div class="smv-tab-underline mb-4"></div>
@@ -88,8 +92,96 @@
             <!-- Tab Content Wrapper -->
             <div class="smv-content-area">
 
+                <!-- Episodes -->
+                <div id="episodes" class="smv-tab-content active">
+
+                    <div class="eps-header">
+                        <div class="eps-dropdown">
+                            <div class="eps-selected" id="epsSelected">
+                                Season 1
+                                <i class="bi bi-caret-down-fill"></i>
+                            </div>
+
+                            <ul class="eps-list" id="epsList">
+                                <li data-season="1">Season 1</li>
+                                <li data-season="2">Season 2</li>
+                                <li data-season="3">Season 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="eps-grid mt-4">
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries1.webp">
+                            <div class="eps-info">
+                                <h5>Ep 1. Jaat Na Poocho Sadhu Ki</h5>
+                                <span>47m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries2.webp">
+                            <div class="eps-info">
+                                <h5>Ep 2. Dekh Tamasha Kursi Ka</h5>
+                                <span>48m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries3.webp">
+                            <div class="eps-info">
+                                <h5>Ep 3. Ghoonghat Ke Pat Khol Re</h5>
+                                <span>58m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries4.webp">
+                            <div class="eps-info">
+                                <h5>Ep 4. Sadho Yeh Murdon Ka Gaon</h5>
+                                <span>44m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries5.webp">
+                            <div class="eps-info">
+                                <h5>Ep 5. Kaun Thagwa Nagariya Lootal Ho</h5>
+                                <span>40m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries6.webp">
+                            <div class="eps-info">
+                                <h5>Ep 6. Na Kahu Se Dosti, Na Kahu Se Bair</h5>
+                                <span>48m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries7.webp">
+                            <div class="eps-info">
+                                <h5>Ep 7. Bahot Kathin Hai Dagar Panghat Ki</h5>
+                                <span>50m</span>
+                            </div>
+                        </div>
+
+                        <div class="eps-card">
+                            <img src="./images/episodes/webseries8.webp">
+                            <div class="eps-info">
+                                <h5>Ep 8. Maaya Maha Thagni Hum Jaani</h5>
+                                <span>40m</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
                 <!-- Similar Movies -->
-                <div id="similar" class="smv-tab-content active">
+                <div id="similar" class="smv-tab-content">
                     <h3 class="text-white mb-3">If You Liked This, Try These</h3>
 
                     <div class="movie-scroll-container">
@@ -289,11 +381,12 @@
                     </div>
 
                 </div>
+
             </div>
         </div>
 
         <!-- Upper Footer Section -->
-        <div class="upper-footer text-light py-3">
+        <div class="upper-footer text-light py-3 mt-5">
 
 
             <h3 class="mb-4">Airtel Xstream Play: Access 25+ OTT Platforms</h3>
@@ -493,7 +586,6 @@
         <!-- Upper Footer Section -->
 
     </div>
-
     <footer class="footer">
     
     <div class="footer-links">
@@ -510,61 +602,64 @@
     <p class="footer-text text-light">For best experience download our app</p>
 
     <div class="footer-apps">
-        <img src="/images/index/Google_Play_2022_logo.svg.png" alt="googleplay">
-        <img src="/images/index/App_Store_(iOS)-Badge-Logo.wine.png" style="width: 150px; height: 100px;" alt="appstore">
-        <img src="/images/index/apple-tv-plus-seeklogo.png" alt="appletv">
-        <img src="/images/index/android-tv-seeklogo.png" alt="androidtv">
-        <img src="/images/index/amazon-fire-tv-seeklogo.png" alt="firetv">
-        <img src="/images/index/chromecast-seeklogo.png" alt="chromecast">
-        <img src="/images/index/tizen-seeklogo.png" alt="tizen">
-        <img src="/images/index/webos-seeklogo.png" alt="webos">
-        <img src="/images/index/vidaa-tv-os-seeklogo.png" alt="vidaa">
+        <img src="./images/index/Google_Play_2022_logo.svg.png" alt="googleplay">
+        <img src="./images/index/App_Store_(iOS)-Badge-Logo.wine.png" style="width: 150px; height: 100px;" alt="appstore">
+        <img src="./images/index/apple-tv-plus-seeklogo.png" alt="appletv">
+        <img src="./images/index/android-tv-seeklogo.png" alt="androidtv">
+        <img src="./images/index/amazon-fire-tv-seeklogo.png" alt="firetv">
+        <img src="./images/index/chromecast-seeklogo.png" alt="chromecast">
+        <img src="./images/index/tizen-seeklogo.png" alt="tizen">
+        <img src="./images/index/webos-seeklogo.png" alt="webos">
+        <img src="./images/index/vidaa-tv-os-seeklogo.png" alt="vidaa">
     </div>
 
     <p class="copyright">© 2025 Airtel. All Rights Reserved. | Airtel Digital Limited</p>
 
     </footer>
+    
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const tabs = document.querySelectorAll('.smv-tab');
     const contents = document.querySelectorAll('.smv-tab-content');
 
     tabs.forEach(tab => {
-    tab.onclick = () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+        tab.addEventListener("click", () => {
+            tabs.forEach(t => t.classList.remove("active"));
+            contents.forEach(c => c.classList.remove("active"));
 
-        tab.classList.add('active');
-        document.querySelector(tab.dataset.target).classList.add('active');
-    };
-    });
-        const scrollers = document.querySelectorAll(".movie-scroll-container");
-
-    scrollers.forEach(container => {
-        const scroller = container.querySelector(".movie-scroller");
-        const leftBtn = container.querySelector(".left-btn");
-        const rightBtn = container.querySelector(".right-btn");
-
-        const scrollAmount = 300; // how much scroll per click
-
-        leftBtn.addEventListener("click", () => {
-            scroller.scrollBy({
-                left: -scrollAmount,
-                behavior: "smooth"
-            });
-        });
-
-        rightBtn.addEventListener("click", () => {
-            scroller.scrollBy({
-                left: scrollAmount,
-                behavior: "smooth"
-            });
+            tab.classList.add("active");
+            document.querySelector(tab.dataset.target).classList.add("active");
         });
     });
 
+    document.querySelector('.smv-tab[data-target="#episodes"]').classList.add("active");
+    document.querySelector('#episodes').classList.add("active");
+
+
+    const epsSelected = document.getElementById("epsSelected");
+    const epsList = document.getElementById("epsList");
+
+    epsSelected.addEventListener("click", () => {
+        epsList.style.display = epsList.style.display === "block" ? "none" : "block";
+    });
+
+    document.querySelectorAll("#epsList li").forEach(item => {
+        item.addEventListener("click", () => {
+            epsSelected.innerHTML = item.textContent + ' <i class="bi bi-caret-down-fill"></i>';
+            epsList.style.display = "none";
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!epsSelected.contains(e.target) && !epsList.contains(e.target)) {
+            epsList.style.display = "none";
+        }
+    });
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

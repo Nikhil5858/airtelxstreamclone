@@ -1221,7 +1221,7 @@ body {
 .smv-content {
     position: relative;
     z-index: 5;
-    padding-top: 150px;
+    padding-top: 250px;
 }
 
 .smv-share {
@@ -1279,3 +1279,111 @@ body {
     overflow: visible !important;
     padding-bottom: 0;
 }
+
+#episodes {
+    padding: 0 20px;
+}
+
+/* Dropdown */
+.eps-dropdown {
+    position: relative;
+    width: 160px;
+}
+
+.eps-selected {
+    background: #1b1b1b;
+    color: white;
+    border: 1px solid #333;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eps-list {
+    list-style: none;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 5px 0 0 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.eps-list li {
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.eps-list li:hover {
+    background: #4f5866;
+}
+
+/* GRID */
+.eps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.eps-card {
+    position: relative;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transform-origin: center;
+    transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
+    z-index: 1;
+}
+
+.eps-card:hover {
+    transform: scale(1.18);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    z-index: 9999;
+}
+
+.eps-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Always visible text */
+.eps-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 30%, rgba(0,0,0,0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: background .3s ease;
+}
+
+.eps-card:hover .eps-info {
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 35%, rgba(0,0,0,0.1) 100%);
+}
+
+.eps-info h5 {
+    color: white;
+    font-size: 17px;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.eps-info span {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+}
+
