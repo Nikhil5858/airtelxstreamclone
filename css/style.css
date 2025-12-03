@@ -1194,6 +1194,39 @@ body {
     filter: invert(1);
 }
 
+.smv-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.smv-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center right;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Show video on hover */
+.smv-hero:hover .smv-video {
+    opacity: 1;
+}
+
+/* Hide background image when video appears */
+.smv-hero:hover .smv-bg {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
 
 .smv-hero {
     height: 90vh;

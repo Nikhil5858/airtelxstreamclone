@@ -44,6 +44,9 @@
         <!-- Single Movie Viewer Section -->
         <div class="smv-hero">
             <div class="smv-bg" style="background-image: url('/images/single/single2.webp');"></div>
+            <video class="smv-video" muted preload="none">
+                <source src="/videos/Super30.mp4" type="video/mp4">
+            </video>
             <div class="smv-overlay"></div>
             <div class="container smv-content text-light">
                 <h1 class="fw-bold display-4">Super 30</h1>
@@ -560,6 +563,27 @@
                 behavior: "smooth"
             });
         });
+    });
+
+    const hero = document.querySelector('.smv-hero');
+    const video = document.querySelector('.smv-video');
+    const bg = document.querySelector('.smv-bg');
+
+    hero.addEventListener('mouseenter', () => {
+        video.style.opacity = "1";
+        bg.style.opacity = "0";
+        if (video.currentTime === 0 || video.ended) {
+            video.currentTime = 0;
+        }
+        video.play();
+    });
+
+    hero.addEventListener('mouseleave', () => {
+    });
+
+    video.addEventListener('ended', () => {
+        video.style.opacity = "0";
+        bg.style.opacity = "1";
     });
 
 </script>
