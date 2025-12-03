@@ -221,9 +221,9 @@ body {
 }
 
 .sidebar:hover ~ .sidebar-fade {
-    left: 150px;     /* sidebar expanded width */
-    width: 350px;    /* how far the gradient spreads */
-    opacity: 1;
+    left: 150px;     
+    width: 550px;    
+    opacity: 3;
 }
 .sidebar .logo {
     padding: 20px 0;
@@ -237,8 +237,8 @@ body {
 }
 
 .sidebar .menu {
-    flex: 1;                   /* take all remaining height */
-    overflow-y: auto;          /* enable scroll only inside menu */
+    flex: 1;                  
+    overflow-y: auto;         
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     padding: 0;
@@ -511,7 +511,8 @@ body {
 .movie-card-wrapper:first-child .movie-card,
 .live-card-wrapper:first-child .live-card,
 .lang-card-wrapper:first-child .lang-card,
-.top10-card-wrapper:first-child .top10-card {
+.cast-card-wrapper:first-child .cast-card,
+.top10-card-wrapper:first-child .top10-card{
     transform-origin: left center;
 }
 
@@ -1216,12 +1217,10 @@ body {
     z-index: 1;
 }
 
-/* Show video on hover */
 .smv-hero:hover .smv-video {
     opacity: 1;
 }
 
-/* Hide background image when video appears */
 .smv-hero:hover .smv-bg {
     opacity: 0;
     transition: opacity 0.4s ease;
@@ -1305,7 +1304,8 @@ body {
     display: block;
 }
 
-.seeall-page .movie-scroller {
+.seeall-page .movie-scroller,
+.seeall-page .ott-scroller {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 20px;
@@ -1313,11 +1313,11 @@ body {
     padding-bottom: 0;
 }
 
+
 #episodes {
     padding: 0 20px;
 }
 
-/* Dropdown */
 .eps-dropdown {
     position: relative;
     width: 160px;
@@ -1358,14 +1358,12 @@ body {
     background: #4f5866;
 }
 
-/* GRID */
 .eps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 25px;
 }
 
-/* CARD */
 .eps-card {
     position: relative;
     height: 180px;
@@ -1391,7 +1389,6 @@ body {
     object-fit: cover;
 }
 
-/* Always visible text */
 .eps-info {
     position: absolute;
     bottom: 0;
@@ -1420,3 +1417,355 @@ body {
     font-size: 14px;
 }
 
+/* SECTION WRAPPER */
+.ott-section {
+    padding: 0 20px;
+    overflow: visible;
+}
+
+/* SCROLL CONTAINER */
+.ott-scroll-container {
+    position: relative;
+    overflow: visible;
+}
+
+.ott-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    scrollbar-width: none;
+}
+
+
+.ott-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* CARD WRAPPER */
+.ott-card-wrapper {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* CARD (Custom Size & Background) */
+.ott-card {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    transition: transform .25s ease, box-shadow .25s ease;
+    transform-origin: center;
+    z-index: 1;
+
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255,255,255,0.35) 0%,
+        rgba(255,255,255,0.18) 25%,
+        rgba(0,0,0,0.45) 100%
+    );
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ott-card img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.ott-card:hover {
+    transform: scale(1.18);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    z-index: 9999;
+}
+
+.ott-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+
+    width: auto;
+    height: auto;
+
+    padding: 0;
+
+    font-size: 42px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 200;
+
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .25s ease, transform .25s ease;
+
+    z-index: 9999;
+}
+
+.ott-left-btn { left: -10px; }
+.ott-right-btn { right: -10px; }
+
+.ott-scroll-container:hover .ott-scroll-btn {
+    opacity: 1;
+}
+
+.bg-jio {
+    background: linear-gradient(145deg, #ffffff 0%, #ffffff 45%, #f2f2f2 100%);
+}
+.bg-zee {
+    background: radial-gradient(circle, #b0b0b0 0%, #a7a7a7 60%, #494848 100%);
+}
+.bg-sony {
+    background: linear-gradient(145deg, #000000 0%, #29114d 40%, #ff7a2f 100%);
+}
+.bg-aha {
+    background: linear-gradient(145deg, #ff6b4d 0%, #ff3a2c 100%);
+}
+.bg-lionsgate {
+    background: linear-gradient(145deg, #005d63 0%, #003d46 100%);
+}
+.bg-hungama {
+    background: linear-gradient(145deg, #00a0ff 0%, #0068ff 100%);
+}
+.bg-sunnxt {
+    background: linear-gradient(145deg, #ff51b0 0%, #ff2348 50%, #ff1c89 100%);
+}
+
+/* HERO WRAPPER */
+.ott-hero {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* FULL BACKGROUND IMAGE */
+.ott-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* DARK GRADIENT TO MAKE TEXT READABLE */
+.ott-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.75) 25%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+}
+
+/* TEXT + LOGO OVERLAY */
+.ott-hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+/* LOGO */
+.ott-hero-logo {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+/* TITLE */
+.ott-hero-title {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.ott-hero-btn {
+    background: linear-gradient(180deg, #ffffff, #dcdcdc);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+@media(max-width: 768px) {
+    .ott-hero {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .ott-hero-image {
+        height: 240px;
+        width: 100%;
+    }
+
+    .ott-hero-content {
+        width: 100%;
+    }
+}
+
+.cast-section {
+    padding: 0 20px;
+    overflow: visible;
+}
+
+.cast-scroll-container {
+    position: relative;
+    overflow: visible;
+}
+
+.cast-scroller {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: visible !important;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    scrollbar-width: none;
+}
+
+.cast-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.cast-scroll-inner {
+    display: flex;
+    gap: 18px;
+    overflow: visible !important;
+}
+
+.cast-card-wrapper {
+    position: relative;
+    overflow: visible !important;
+}
+
+.cast-card {
+    position: relative;
+    width: 150px;
+    height: 220px;
+    border-radius: 5px;
+    transform-origin: center;
+    transition: transform .25s ease, border .25s ease, box-shadow .25s ease;
+    z-index: 1;
+}
+
+.cast-card:hover {
+    transform: scale(1.18);
+    border: 3px solid rgba(255,255,255,0.6);
+    border-radius: 5px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.75);
+    z-index: 9999;
+}
+
+.cast-card img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cast-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 14px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: opacity .3s ease;
+    margin-top: 200px;
+}
+
+.cast-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.cast-badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.cast-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.role {
+    background: rgba(126, 125, 125, 0.7);
+}
+
+
+.person-details-section {
+    padding: 20px 0 0 0;
+    color: #fff;
+}
+
+.person-details-wrapper {
+    gap: 40px;
+}
+
+.person-left {
+    max-width: 55%;
+}
+
+.back-btn {
+    font-size: 22px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.person-name {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.person-dob {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 18px;
+}
+
+.person-bio {
+    font-size: 17px;
+    color: #c4c4c4;
+    line-height: 1.6;
+}
+
+.person-right {
+    flex-shrink: 0;
+}
+
+.person-photo {
+    width: 280px;
+    height: 380px;
+    border-radius: 15px;
+    object-fit: cover;
+}
