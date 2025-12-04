@@ -552,30 +552,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    const scrollers = document.querySelectorAll(".movie-scroll-container");
-
-    scrollers.forEach(container => {
-        const scroller = container.querySelector(".movie-scroller");
-        const leftBtn = container.querySelector(".left-btn");
-        const rightBtn = container.querySelector(".right-btn");
-
-        const scrollAmount = 300; 
-
-        leftBtn.addEventListener("click", () => {
-            scroller.scrollBy({
-                left: -scrollAmount,
-                behavior: "smooth"
-            });
-        });
-
-        rightBtn.addEventListener("click", () => {
-            scroller.scrollBy({
-                left: scrollAmount,
-                behavior: "smooth"
-            });
-        });
-    });
-</script>
+<script src="./js/script.js"></script>
 </body>
 </html>

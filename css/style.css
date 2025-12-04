@@ -22,7 +22,7 @@ body {
 
 .main-content {
     position: relative;
-    z-index: 1;
+    /* z-index: 1; */
   margin-left: 70px;          
   padding: 20px;
   min-height: 100vh;
@@ -279,7 +279,6 @@ body {
 .sidebar .menu li:hover a{
   color: #fff;
 }
-
 
 .category-wrapper {
   background: transparent;
@@ -1066,6 +1065,10 @@ body {
     font-weight: 500;
 }
 
+.row a{
+    text-decoration: none !important;
+}
+
 .watchlist-empty {
     padding: 70px 0;
     margin-bottom: 150px;
@@ -1769,3 +1772,364 @@ body {
     border-radius: 15px;
     object-fit: cover;
 }
+
+.language-container {
+    padding: 10px;
+    color: #fff;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.lang-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.lang-item {
+    text-align: center;
+    cursor: pointer;
+}
+
+.lang-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tick {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.tick i {
+    font-size: 14px;
+    color: #222;
+}
+
+.lang-item.selected .tick {
+    display: flex;
+}
+
+.lang-item.selected .lang-circle {
+    border: 2px solid #fff;
+    transform: scale(1.06);
+}
+
+.submit-btn {
+    margin-top: 50px;
+    padding: 10px 35px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    background: linear-gradient(to right, #fff, #cfcfcf);
+    cursor: pointer;
+    margin-bottom: 300px;
+}
+
+.custom-tabs {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+    font-size: 17px;
+    color: #bbb;
+    justify-content: center;
+}
+
+.custom-tabs .tab {
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.custom-tabs .tab.active {
+    color: #fff;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.faq-accordion .accordion-item {
+    background: transparent !important;
+    border: none;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.faq-accordion .accordion-button {
+    background: transparent !important;
+    color: #a6a5a5;
+    font-size: 20px;
+    padding: 20px 0;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.faq-accordion .accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.faq-accordion .accordion-body {
+    background: transparent !important;
+    padding: 15px 0 25px;
+    color: #cfcfcf;
+}
+
+.faq-accordion .accordion-button::after {
+    filter: invert(1);
+    opacity: 0.9;
+    transform: scale(1.2);
+}
+
+.faq-accordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg) scale(1.2);
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+.terms-title,
+.terms-content{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.tou__text {
+    color: #cfcfcf;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.tou__text .strong,
+.strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.tou__list li {
+    color: #cfcfcf;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.terms-content a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Page title */
+.pp-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 40px 0 15px;
+}
+
+/* Normal text */
+.pp-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cfcfcf;
+    margin-bottom: 18px;
+}
+
+/* Bold white text */
+.pp-strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Lists */
+.pp-list {
+    margin-left: 25px;
+    color: #cfcfcf;
+    line-height: 1.7;
+}
+
+.pp-list li {
+    margin-bottom: 6px;
+}
+
+/* Links */
+#privacy a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.pp-title,
+.pp-text{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Title */
+.sub-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 35px 0 15px;
+}
+
+/* Normal text */
+.sub-text {
+    color: #cfcfcf;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* Strong / bold */
+.sub-strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Center text */
+.center {
+    text-align: center;
+}
+
+/* List styling */
+.sub-list {
+    color: #cfcfcf;
+    margin-left: 20px;
+    line-height: 1.7;
+}
+
+.sub-list li {
+    margin-bottom: 8px;
+}
+
+.sub-table {
+    max-width: 90%;          
+    width: 90%;              
+    margin: 0 auto 30px;     
+    border: 1px solid #666;
+    border-collapse: collapse;
+    color: #cfcfcf;
+}
+
+
+.sub-table th {
+    background: rgba(255,255,255,0.05);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #666;
+}
+
+.sub-table td {
+    padding: 10px;
+    border: 1px solid #666;
+    color: #cfcfcf;
+}
+
+/* Links */
+#subscription a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.sub-title,
+.sub-text{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Feedback*/
+/* Title */
+.fb-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 35px 0 15px;
+}
+
+/* Paragraph text */
+.fb-text {
+    color: #cfcfcf;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 18px;
+}
+
+/* Strong text */
+.fb-strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* List */
+.fb-list {
+    margin-left: 50px;
+    color: #cfcfcf;
+    line-height: 1.7;
+}
+
+.fb-list li {
+    margin-bottom: 6px;
+}
+
+/* Table */
+.fb-table {
+    max-width: 90%;          
+    width: auto;                /* shrink to content width */
+    table-layout: auto;               
+    margin: 0 auto 30px;     
+    border: 1px solid #666;
+    border-collapse: collapse;
+    color: #cfcfcf;
+}
+
+.fb-table th,
+.fb-table td {
+    border: 1px solid #666;
+    padding: 10px;
+}
+
+.fb-table th {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-weight: 600;
+}
+
+.fb-table caption {
+    caption-side: top;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.fb-title,
+.fb-text{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
