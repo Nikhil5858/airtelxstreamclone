@@ -450,6 +450,22 @@ body {
     background: rgba(255,255,255,0.2);
 }
 
+.free-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #00c46b; 
+    color: #fff;
+    padding: 3px 9px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+
+
 .watchlist-btn {
     width: 100%;
     padding: 10px;
